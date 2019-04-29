@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<style>
+    .beauty {
+        color:white;
+    }
+
+    @-webkit-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 280px; }
+}
+
+    @-webkit-keyframes rotate-center {
+    0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    }
+    }
+    @keyframes rotate-center {
+    0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    }
+    }
+
+    .rotate-center {
+    display: block;
+    position: relative;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+	-webkit-animation: rotate-center 0.6s ease-in-out both infinite;
+	        animation: rotate-center 0.6s ease-in-out both infinite;
+    }
+
+    .banana{
+        position: absolute;
+  -webkit-animation: moveX 10s linear 0s infinite alternate, moveY 12.4s linear 0s infinite alternate;
+  -moz-animation: moveX 10s linear 0s infinite alternate, moveY 15.4s linear 0s infinite alternate;
+  -o-animation: moveX 10s linear 0s infinite alternate, moveY 15.4s linear 0s infinite alternate;
+  animation: moveX 10s linear 0s infinite alternate, moveY 12.4s linear 0s infinite alternate;
+    }
+</style>
+<html>
+    <head>
+        <audio src="troll/musics/toca_raul.mp3" autoplay loop controls></audio>
+        <link rel="shortcut icon" href="troll/favicon.ico"/>
+        <title>Brad Pitt - Gostoso</title>
+    </head>
+    <body style="background-color: black">
+        <img src="troll/images/dance.gif" class="banana">
+        <img src="troll/images/tenor.gif" class="rotate-center" alt="#deuso" width="400" height="300">
+    </body>
+    
+</html> -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <title>POLI Class: Web version 1.0</title>
+  </head>
+  <body>
+    <div class="content">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salas ocupadas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
+          </li>
+
+          <div style="margin-left: 846px;">
+              <a href="http://upe.poli.br/">
+                <img alt="Escola Politécnica de Pernambuco" src="images/logoPOLI.png" width="80" height="40">
+              </a>
+              <a href="http://www.upe.br/" style="margin-left: 10px;">
+                <img alt="Universidade de Pernambucp" src="images/logoUPE.jpg" width="80" height="40">
+              </a>
+            </div>
+        </ul>
+
+        <div class="tab-content card" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <table class="table" id="table" style="margin: 0;">
+                  <thead>
+                    <tr>
+                      <th data-field="name">Sala</th>
+                      <th data-field="teacher">Professor(a)</th>
+                      <th data-field="class">Cadeira</th>
+                    </tr>
+                  </thead>
+                </table>
+          </div>
+          <!-- FIXIT -->
+          <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+              <table class="table" style="margin: 0;">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sala</th>
+                      <th scope="col">Professor(a)</th>
+                      <th scope="col">Cadeira</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+    </div>
+
+    <!-- FIXIT -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- TODO $.getJson() to bootstrap table -->
+  </body>
+</html>
