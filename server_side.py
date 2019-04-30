@@ -25,9 +25,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
     # socket.SOMAXCONN is the maximum backlog value that the "socket.listen" can allow by system
     tcp.listen(socket.SOMAXCONN)
     while True:
-        if input("Write 'exit' or 'quit' for close server...\n") == 'exit' or 'quit':
-            print('\033[1;30;41m Good bye! \033[m')
-            break
+        # if input("Write 'exit' or 'quit' for close server...\n") == 'exit' or 'quit':
+        #     print('\033[1;30;41m Good bye! \033[m')
+        #     break
 
         # return a new socket representing the connection, and the address of the client
         (conn, addr) = tcp.accept()
