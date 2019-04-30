@@ -15,7 +15,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
     # socket.gethostname() returns the hostname's machine
 
     print('Try to connect: ' + HOST)
-
+    
     tcp.bind((HOST, PORT))
 
     # define the number of pending connections the queue will hold
@@ -68,4 +68,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
             conn.sendall(response)
             conn.close()
         
-    tcp.close()
+    tcp.close() 
