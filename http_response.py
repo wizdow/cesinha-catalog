@@ -94,9 +94,7 @@ class Response:
                             </tr>
                             """
         body += "</tbody>"
-        str_replace = """<tbody id="api_simulated">
-
-                  </tbody>"""
+        str_replace = '<!--                  <tbody id="api_simulated">-->'
         body = str(html).replace(str_replace, body)
 
         return body.encode('utf-8')
