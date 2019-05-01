@@ -1,3 +1,6 @@
+import json
+
+
 class Response:
     request = ''
     header = ''
@@ -53,13 +56,50 @@ class Response:
             return self.body
 
         try:
-            file = open(self.request, 'rb')
-            self.body = file.read()
-            file.close()
+            if self.request == 'index.html':
+                file_json = open('API_simulated.json', 'rb')
+                html = open(self.request, 'rb')
+                body = self.get_body_with_json(file_json.read(), html.read())
+                file_json.close()
+                html.close()
+            else:
+                file = open(self.request, 'rb')
+                body = file.read()
+                file.close()
+
+            self.body = body
         except Exception as e:
             self.set_body(str('Error 404: File not found\n').encode('utf-8'))
 
         return self.body
+
+    def get_body_with_json(self, file_json, html):
+        body = """<tbody>\n"""
+        classrooms = json.loads(file_json)
+        html = html.decode()
+
+        for classroom in classrooms:
+            if classroom['isUsed']:
+                body += f"""<tr>
+                              <th scope="row">{classroom['name']}</th>
+                              <td>{classroom['teacher']}</td>
+                              <td>{classroom['class']}</td>
+                            </tr>
+                            """
+            else:
+                body += f"""<tr>
+                              <th scope="row">{classroom['name']}</th>
+                              <td> -- </td>
+                              <td> -- </td>
+                            </tr>
+                            """
+        body += "</tbody>"
+        str_replace = """<tbody id="api_simulated">
+
+                  </tbody>"""
+        body = str(html).replace(str_replace, body)
+
+        return body.encode('utf-8')
 
     def get_response(self):
         return self.header.encode('utf-8') + self.body

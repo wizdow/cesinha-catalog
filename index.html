@@ -122,34 +122,8 @@
                       <th data-field="class">Cadeira</th>
                     </tr>
                   </thead>
-                </table>
-          </div>
-          <!-- FIXIT -->
-          <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
-              <table class="table" id="table1" style="margin: 0;">
-                  <thead>
-                    <tr>
-                      <th scope="col">Sala</th>
-                      <th scope="col">Professor(a)</th>
-                      <th scope="col">Cadeira</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="a">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                    </tr>
+                  <tbody id="api_simulated">
+
                   </tbody>
                 </table>
           </div>
@@ -160,13 +134,5 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- TODO $.getJson() to bootstrap table -->
-    <script>
-      console.log('hello');
-      $.getJSON('API_simulated.json', function(data) {
-        console.log(data);
-      });
-    </script>
   </body>
 </html>
