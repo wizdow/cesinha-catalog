@@ -94,24 +94,27 @@
   </head>
   <body>
     <div class="content">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salas ocupadas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
-          </li>
+        <div style="float: left; width: 100%; position: relative">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item col-md-3">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salas ocupadas</a>
+              </li>
+              <li class="nav-item col-md-3">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
+              </li>
 
-          <div style="margin-left: 846px;">
-              <a href="http://upe.poli.br/">
-                <img alt="Escola Politécnica de Pernambuco" target="_blank" src="images/logoPOLI.png" width="80" height="40">
-              </a>
-              <a href="http://www.upe.br/" target="_blank" style="margin-left: 10px;">
-                <img alt="Universidade de Pernambucp" src="images/logoUPE.jpg" width="80" height="40">
-              </a>
+
+            <div style="position: relative; float: right">
+                <a href="http://upe.poli.br/">
+                    <img alt="Escola Politécnica de Pernambuco" target="_blank" src="images/logoPOLI.png" width="80" height="40">
+                </a>
+                <a href="http://www.upe.br/" target="_blank" style="margin-left: 10px;">
+                    <img alt="Universidade de Pernambucp" src="images/logoUPE.jpg" width="80" height="40">
+                </a>
             </div>
-        </ul>
-
+            </ul>
+        </div>
+    </div>
         <div class="tab-content card" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <table class="table" id="table" style="margin: 0;">
