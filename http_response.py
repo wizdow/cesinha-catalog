@@ -2,46 +2,57 @@ import json
 import mimetypes
 
 
-class Response:
-    request = ''
-    header = ''
-    body = ''
+class Response(object):
 
     def __init__(self, request):
-        self.request = request.route if request else 'index.html'
-        self.get_header()
-        self.get_body()
+        self._request = request.route if request else 'index.html'
+        self._headers = self.create_headers()
+        self._body = self.create_body()
 
-    def set_request(self, request):
-        self.request = request
+    @property
+    def request(self):
+        return self._request
 
-    def set_body(self, body):
-        self.body = body
+    @request.setter
+    def request(self, request):
+        self._request = request
 
-    def set_header(self, header):
-        self.header = header
+    @property
+    def body(self):
+        return self._body
 
-    def get_header(self):
+    @body.setter
+    def body(self, body):
+        self._body = body.encode('utf-8')
 
-        if self.header:
-            return self.header
+    @property
+    def headers(self):
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers):
+        self._headers = headers
+
+    def create_headers(self):
+
+        if hasattr(self, '_headers'):
+            return self.headers
 
         try:
-            header = 'HTTP/1.1 200 OK\n'
+            headers = 'HTTP/1.1 200 OK\r\n'
             mime_type = mimetypes.guess_type(self.request)[0]
 
-            header += 'Content-Type: ' + str(mime_type) + '\n\n'
-            self.set_header(header)
+            headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
         except Exception as e:
-            self.set_header('HTTP/1.1 404 Not Found\n\n')
-            self.set_body(str('Error 404: File not found\n').encode('utf-8'))
+            headers = 'HTTP/1.1 404 Not Found\r\n\r\n'
+            self.body('Error 404: File not found\r\n')
 
-        return self.header
+        return headers
 
-    def get_body(self):
+    def create_body(self):
 
-        if self.body:
+        if hasattr(self, '_body'):
             return self.body
 
         try:
@@ -56,13 +67,13 @@ class Response:
                 body = file.read()
                 file.close()
 
-            self.body = body
         except Exception as e:
-            self.set_body(str('Error 404: File not found\n').encode('utf-8'))
+            return 'Error 404: File not found\r\n'.encode('utf-8')
 
-        return self.body
+        return body
 
-    def get_body_with_json(self, file_json, html):
+    @staticmethod
+    def get_body_with_json(file_json, html):
         body_not_free = """<tbody>\n"""
         body_free = """<tbody>\n"""
         classrooms = json.loads(file_json)
@@ -94,4 +105,4 @@ class Response:
         return body.encode('utf-8')
 
     def get_response(self):
-        return self.header.encode('utf-8') + self.body
+        return self.headers.encode('utf-8') + self.body
