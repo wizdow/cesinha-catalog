@@ -8,7 +8,7 @@ class Response:
     body = ''
 
     def __init__(self, request):
-        self.request = request.request if request else 'index.html'
+        self.request = request.route if request else 'index.html'
         self.get_header()
         self.get_body()
 

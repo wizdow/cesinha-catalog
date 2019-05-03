@@ -1,7 +1,7 @@
 class Request:
 
     method = ''
-    request = ''
+    route = ''
     host = ''
     connection = ''
     user_agent = ''
@@ -18,9 +18,24 @@ class Request:
         request = data.split('\r\n').pop(0)
         data = data.split(' ')
 
-        self.request = 'index.html' if data[1].lstrip('/') == '' else data[1].lstrip('/')
+        self.route = 'index.html' if data[1].lstrip('/') == '' else data[1].lstrip('/')
         self.method = data[0]
 
+        self.set_params(request)
+
+    def get_route(self):
+        return self.route
+
+    def get_data(self):
+        return self.data
+
+    def set_route(self, route):
+        self.route = route
+
+    def set_data(self, data):
+        self.data = data
+
+    def set_params(self, request):
         for parameter in request:
             parameter = parameter.lower()
             if 'host: ' in parameter:
@@ -49,15 +64,3 @@ class Request:
                 break
             else:
                 continue
-
-    def get_request(self):
-        return self.request
-
-    def get_data(self):
-        return self.data
-
-    def set_request(self, request):
-        self.request = request
-
-    def set_data(self, data):
-        self.data = data
