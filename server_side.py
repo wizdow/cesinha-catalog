@@ -1,4 +1,5 @@
 import socket
+import mimetypes
 
 HOST = socket.gethostbyname(socket.gethostname())
 PORT = 4000
@@ -29,7 +30,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
         with conn:
             # return a object w/ sent bytes by client
             # the value of bufsize should be a relatively small power of 2
-            data = conn.recv(2048).decode('utf-8')
+            data = conn.recv(1024).decode('utf-8')
 
             # Split to detect the methods and request
             stringSplit = data.split(' ')
@@ -43,20 +44,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
                 file.close()
 
                 header_response = 'HTTP/1.1 200 OK\n'
-
-                if(http_request.endswith(".html")):
-                    mime_type = 'text/html'
-                elif(http_request.endswith(".mp3")):
-                    mime_type = 'audio/' + http_request.rpartition(".")[-1]
-                elif(http_request.endswith(".js")):
-                    mime_type = '​​​application/javascript'
-                elif(http_request.endswith(".json")):
-                    mime_type = '​​​application/json'
-                elif(http_request.endswith(".css")):
-                    mime_type = '​​​text/css'            
-                else:
-                    mime_type = 'image/' + http_request.rpartition(".")[-1]
-
+                mime_type = mimetypes.guess_type(http_request)[0]
                 header_response += 'Content-Type: ' + str(mime_type) + '\n\n'
 
             except Exception as e:
