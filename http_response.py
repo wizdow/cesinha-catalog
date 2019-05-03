@@ -63,28 +63,33 @@ class Response:
         return self.body
 
     def get_body_with_json(self, file_json, html):
-        body = """<tbody>\n"""
+        body_not_free = """<tbody>\n"""
+        body_free = """<tbody>\n"""
         classrooms = json.loads(file_json)
         html = html.decode()
 
         for classroom in classrooms:
             if classroom['isUsed']:
-                body += f"""<tr>
+                body_not_free += f"""<tr>
                               <th scope="row">{classroom['name']}</th>
                               <td>{classroom['teacher']}</td>
                               <td>{classroom['class']}</td>
                             </tr>
                             """
             else:
-                body += f"""<tr>
+                body_free += f"""<tr>
                               <th scope="row">{classroom['name']}</th>
                               <td> -- </td>
                               <td> -- </td>
                             </tr>
                             """
-        body += "</tbody>"
-        str_replace = '<!--                  <tbody id="api_simulated">-->'
-        body = str(html).replace(str_replace, body)
+        body_not_free += "</tbody>"
+        body_free += "</tbody>"
+        str_replace_not_free = '<!--                  <tbody id="api_simulated_not_free">-->'
+        str_replace_free = '<!--                  <tbody id="api_simulated_free">-->'
+
+        html = str(html).replace(str_replace_not_free, body_not_free)
+        body = str(html).replace(str_replace_free, body_free)
 
         return body.encode('utf-8')
 
