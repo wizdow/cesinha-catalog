@@ -1,4 +1,5 @@
 .vscode/*
 .idea/
+__pycache__/
 rc1_1ee.code-workspace
 desktop.ini

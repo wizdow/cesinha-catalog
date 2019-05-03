@@ -35,7 +35,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
         with conn:
             # return a object w/ sent bytes by client
             # the value of bufsize should be a relatively small power of 2
-            data = conn.recv(2048).decode('utf-8')
+            data = conn.recv(1024).decode('utf-8')
 
             request = http_request.Request(data)
 
