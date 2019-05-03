@@ -1,4 +1,5 @@
 import json
+import mimetypes
 
 
 class Response:
@@ -27,19 +28,7 @@ class Response:
 
         try:
             header = 'HTTP/1.1 200 OK\n'
-
-            if self.request.endswith(".html"):
-                mime_type = 'text/html'
-            elif self.request.endswith(".mp3"):
-                mime_type = 'audio/' + self.request.rpartition(".")[-1]
-            elif self.request.endswith(".js"):
-                mime_type = '​​​application/javascript'
-            elif self.request.endswith(".json"):
-                mime_type = '​​​application/json'
-            elif self.request.endswith(".css"):
-                mime_type = '​​​text/css'
-            else:
-                mime_type = 'image/' + self.request.rpartition(".")[-1]
+            mime_type = mimetypes.guess_type(self.request)[0]
 
             header += 'Content-Type: ' + str(mime_type) + '\n\n'
             self.set_header(header)

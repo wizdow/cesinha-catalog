@@ -14,10 +14,10 @@
         <div style="float: left; width: 100%; position: relative">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item col-md-3">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salas ocupadas</a>
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="/#home" role="tab" aria-controls="home" aria-selected="true">Salas Ocupadas</a>
               </li>
               <li class="nav-item col-md-3">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="/#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
               </li>
 
 
@@ -26,7 +26,7 @@
                     <img alt="Escola Politécnica de Pernambuco" target="_blank" src="images/logoPOLI.png" width="80" height="40">
                 </a>
                 <a href="http://www.upe.br/" target="_blank" style="margin-left: 10px;">
-                    <img alt="Universidade de Pernambucp" src="images/logoUPE.jpg" width="80" height="40">
+                    <img alt="Universidade de Pernambuco" src="images/logoUPE.jpg" width="80" height="40">
                 </a>
             </div>
             </ul>
@@ -46,7 +46,35 @@
                 </table>
           </div>
         </div>
-    </div>
+    <!-- FIXIT -->
+        <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+          <table class="table" id="table1" style="margin: 0;">
+              <thead>
+                <tr>
+                  <th scope="col">Sala</th>
+                  <th scope="col">Professor(a)</th>
+                  <th scope="col">Cadeira</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                </tr>
+                <tr>
+                  <th scope="row" id="a">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
     
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/popper.min.js"></script>
