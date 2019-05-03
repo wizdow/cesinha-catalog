@@ -3,9 +3,11 @@ class Request(object):
     def __init__(self, string):
         self._string = string
         self._params = []
-        self._headers = self.headers_by_string(string.split('\r\n').pop(0))
 
-        string = string.split(' ')
+        string.split('\r\n').pop(0)
+        self._headers = self.headers_by_string(string)
+
+        string = self.string.split(' ')
 
         self._route = 'index.html' if string[1].lstrip('/') == '' else string[1].lstrip('/')
         self._method = string[0]
