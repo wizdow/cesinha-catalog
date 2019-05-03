@@ -1,66 +1,104 @@
-class Request:
+class Request(object):
 
-    method = ''
-    route = ''
-    host = ''
-    connection = ''
-    user_agent = ''
-    accept = ''
-    referer = ''
-    accept_encoding = ''
-    accept_language = ''
-    cookie = ''
-    data = []
+    def __init__(self, string):
+        self._string = string
+        self._params = []
+        self._headers = self.headers_by_string(string.split('\r\n').pop(0))
 
-    def __init__(self, data):
-        self.data = data
+        string = string.split(' ')
 
-        request = data.split('\r\n').pop(0)
-        data = data.split(' ')
+        self._route = 'index.html' if string[1].lstrip('/') == '' else string[1].lstrip('/')
+        self._method = string[0]
 
-        self.route = 'index.html' if data[1].lstrip('/') == '' else data[1].lstrip('/')
-        self.method = data[0]
+    @property
+    def params(self):
+        return self._params
 
-        self.set_params(request)
+    @params.setter
+    def params(self, params):
+        self._params = params
 
-    def get_route(self):
-        return self.route
+    @property
+    def string(self):
+        return self._string
 
-    def get_data(self):
-        return self.data
+    @string.setter
+    def string(self, string):
+        self._string = string
 
-    def set_route(self, route):
-        self.route = route
+    @property
+    def route(self):
+        return self._route
 
-    def set_data(self, data):
-        self.data = data
+    @route.setter
+    def route(self, route):
+        self._route = route
 
-    def set_params(self, request):
+    @property
+    def method(self):
+        return self._method
+
+    @method.setter
+    def method(self, method):
+        self._method = method
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers):
+        self._headers = headers
+
+    @staticmethod
+    def headers_by_string(request):
+        headers = {"body": request[len(request) - 1]}
+
         for parameter in request:
             parameter = parameter.lower()
             if 'host: ' in parameter:
-                self.host = parameter.replace('host: ', '')
+                headers["host"] = parameter.replace('host: ', '')
+                break
+            elif 'upgrade-insecure-requests: ' in parameter:
+                headers["upgrade_insecure_requests"] = parameter.replace('upgrade-insecure-requests: ', '')
+                break
+            elif 'content-type: ' in parameter:
+                headers["content_type"] = parameter.replace('content-type: ', '')
+                break
+            elif 'authority: ' in parameter:
+                headers["authority"] = parameter.replace('authority: ', '')
                 break
             elif 'connection: ' in parameter:
-                self.connection = parameter.replace('connection: ', '')
+                headers["connection"] = parameter.replace('connection: ', '')
                 break
             elif 'user-agent: ' in parameter:
-                self.user_agent = parameter.replace('user-agent: ', '')
+                headers["user_agent"] = parameter.replace('user-agent: ', '')
                 break
             elif 'accept: ' in parameter:
-                self.accept = parameter.replace('accept: ', '')
+                headers["accept"] = parameter.replace('accept: ', '')
                 break
             elif 'referer: ' in parameter:
-                self.referer = parameter.replace('referer: ', '')
+                headers["referer"] = parameter.replace('referer: ', '')
+                break
+            elif 'origin: ' in parameter:
+                headers["origin"] = parameter.replace('origin: ', '')
+                break
+            elif 'pragma: ' in parameter:
+                headers["pragma"] = parameter.replace('pragma: ', '')
                 break
             elif 'accept-encoding: ' in parameter:
-                self.accept_encoding = parameter.replace('accept-encoding: ', '')
+                headers["accept_encoding"] = parameter.replace('accept-encoding: ', '')
                 break
             elif 'accept-language: ' in parameter:
-                self.accept_language = parameter.replace('accept-language: ', '')
+                headers["accept_language"] = parameter.replace('accept-language: ', '')
                 break
             elif 'cookie: ' in parameter:
-                self.cookie = parameter.replace('cookie: ', '')
+                headers["cookie"] = parameter.replace('cookie: ', '')
+                break
+            elif 'cache-control: ' in parameter:
+                headers["cache_control"] = parameter.replace('cache-control: ', '')
                 break
             else:
                 continue
+
+        return headers
