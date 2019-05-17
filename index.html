@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 
-    <title>POLI Class: Web version 1.0</title>
+    <title>Cesinha WEB Catalog</title>
   </head>
   <body>
     <div class="content">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Salas ocupadas</a>
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Livros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Salas livres</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Provas</a>
           </li>
 
           <div style="margin-left: 846px;">
@@ -34,31 +34,30 @@
               <table class="table" id="table" style="margin: 0;">
                   <thead>
                     <tr>
-                      <th data-field="name">Sala</th>
-                      <th data-field="teacher">Professor(a)</th>
-                      <th data-field="class">Cadeira</th>
+                      <th data-field="name">Cadeira</th>
+                      <th data-field="teacher">Autor(a)</th>
+                      <th data-field="class">Título</th>
                     </tr>
                   </thead>
                   <tbody id="books">
                   </tbody>
                 </table>
           </div>
-          <!-- FIXIT -->
           <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
               <table class="table" id="table1" style="margin: 0;">
                   <thead>
                     <tr>
-                      <th scope="col">Sala</th>
-                      <th scope="col">Professor(a)</th>
                       <th scope="col">Cadeira</th>
+                      <th scope="col">Professor(a)</th>
+                      <th scope="col">Período</th>
                     </tr>
                   </thead>
-<!--                  <tbody id="api_simulated_free">-->
+                  <tbody id="exames">
+                  </tbody>
                 </table>
           </div>
         </div>
     </div>
-
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
