@@ -44,9 +44,9 @@ class Response(object):
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
-        except Exception as e:
+        except Exception:
             headers = 'HTTP/1.1 404 Not Found\r\n\r\n'
-            self.body('Error 404: File not found\r\n')
+            self._body('Error 404: File not found\r\n')
 
         return headers
 
@@ -67,7 +67,7 @@ class Response(object):
                 body = file.read()
                 file.close()
 
-        except Exception as e:
+        except Exception:
             return 'Error 404: File not found\r\n'.encode('utf-8')
 
         return body
@@ -79,44 +79,40 @@ class Response(object):
         classrooms = json.loads(file_json)
 
         for classroom in classrooms:
-            if classroom['isUsed']:
+            if classroom['type'] == 0:
                 table = html.find(id="books")
                 row = html.new_tag("tr")
 
                 column = html.new_tag("th", scope="row")
-                column.append(classroom['name'])
+                column.append(classroom['course'])
                 row.append(column)
 
                 column = html.new_tag("td")
-                column.append(classroom['teacher'])
+                column.append(classroom['assigned'])
                 row.append(column)
 
                 column = html.new_tag("td")
-                column.append(classroom['class'])
+                column.append(classroom['title'])
                 row.append(column)
 
                 table.append(row)
             else:
-                continue
+                table = html.find(id="exames")
+                row = html.new_tag("tr")
 
-        # body_free = """<tbody>\n"""
-        # classrooms = json.loads(file_json)
-        # html = html.decode()
+                column = html.new_tag("th", scope="row")
+                column.append(classroom['course'])
+                row.append(column)
 
-        # for classroom in classrooms:
-        #     if classroom['isUsed']:
-        #         continue
-        #     else:
-        #         body_free += f"""<tr>
-        #                       <th scope="row">{classroom['name']}</th>
-        #                       <td> -- </td>
-        #                       <td> -- </td>
-        #                     </tr>
-        #                     """
-        # body_free += "</tbody>"
-        # str_replace_free = '<!--                  <tbody id="api_simulated_free">-->'
+                column = html.new_tag("td")
+                column.append(classroom['assigned'])
+                row.append(column)
 
-        # body = str(html).replace(str_replace_free, body_free)
+                column = html.new_tag("td")
+                column.append(classroom['title'])
+                row.append(column)
+
+                table.append(row)
 
         return html.encode('utf-8')
 
