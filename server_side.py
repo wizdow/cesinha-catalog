@@ -17,7 +17,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
     # socket.gethostname() returns the hostname's machine
 
     print(f'Try to connect: {HOST}:{PORT}')
-    
+
     tcp.bind((HOST, PORT))
 
     # define the number of pending connections the queue will hold
@@ -31,6 +31,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
 
         # return a new socket representing the connection, and the address of the client
         (conn, addr) = tcp.accept()
-        
-        threading.Thread(target = threaded.Thread, args = (conn,)).start()
+
+        threading.Thread(target=threaded.Thread, args=(conn,)).start()
 tcp.close()

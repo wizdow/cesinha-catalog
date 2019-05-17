@@ -1,6 +1,7 @@
 import json
 import mimetypes
-from bs4 import BeautifulSoup
+from services.html_controller import HtmlController
+
 
 class Response(object):
 
@@ -75,46 +76,13 @@ class Response(object):
     @staticmethod
     def get_body_with_json(file_json, response):
 
-        html = BeautifulSoup(response, 'html.parser')
-        classrooms = json.loads(file_json)
+        html = HtmlController(response, 'html.parser')
+        files = json.loads(file_json)
 
-        for classroom in classrooms:
-            if classroom['type'] == 0:
-                table = html.find(id="books")
-                row = html.new_tag("tr")
+        for file in files:
+            html.fill_files_in_index(file, file['type'])
 
-                column = html.new_tag("th", scope="row")
-                column.append(classroom['course'])
-                row.append(column)
-
-                column = html.new_tag("td")
-                column.append(classroom['assigned'])
-                row.append(column)
-
-                column = html.new_tag("td")
-                column.append(classroom['title'])
-                row.append(column)
-
-                table.append(row)
-            else:
-                table = html.find(id="exames")
-                row = html.new_tag("tr")
-
-                column = html.new_tag("th", scope="row")
-                column.append(classroom['course'])
-                row.append(column)
-
-                column = html.new_tag("td")
-                column.append(classroom['assigned'])
-                row.append(column)
-
-                column = html.new_tag("td")
-                column.append(classroom['title'])
-                row.append(column)
-
-                table.append(row)
-
-        return html.encode('utf-8')
+        return html.html.encode('utf-8')
 
     def get_response(self):
         return self.headers.encode('utf-8') + self.body
