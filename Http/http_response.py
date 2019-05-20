@@ -5,18 +5,27 @@ from Http.controllers.index_controller import IndexController
 
 class Response(object):
 
-    def __init__(self, request):
-        self._request = request.route if request else 'index.html'
+    def __init__(self, request, route):
+        self._request = request
+        self._route = route
         self._headers = self.create_headers()
         self._body = self.create_body()
 
     @property
     def request(self):
-        return self._request
+        return self._route
 
     @request.setter
     def request(self, request):
-        self._request = request
+        self._route = request
+
+    @property
+    def route(self):
+        return self._route
+
+    @route.setter
+    def route(self, route):
+        self._route = route
 
     @property
     def body(self):
@@ -41,7 +50,7 @@ class Response(object):
 
         try:
             headers = 'HTTP/1.1 200 OK\r\n'
-            mime_type = mimetypes.guess_type(self.request)[0]
+            mime_type = mimetypes.guess_type(self.route.path)[0]
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
@@ -57,14 +66,14 @@ class Response(object):
             return self.body
 
         try:
-            if self.request == 'index.html':
+            if self.route.path == 'index.html':
                 file_json = open('repository/sql.json', 'rb')
-                html = open(self.request, 'rb')
+                html = open(self.route.path, 'rb')
                 body = self.get_body_with_json(file_json.read(), html.read())
                 file_json.close()
                 html.close()
             else:
-                file = open(self.request, 'rb')
+                file = open(self.route.path, 'rb')
                 body = file.read()
                 file.close()
 
