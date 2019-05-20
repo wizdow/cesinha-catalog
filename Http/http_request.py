@@ -1,16 +1,13 @@
 class Request(object):
 
-    def __init__(self, string):
+    def __init__(self, string, method):
         self._string = string
         self._params = []
+        self._method = method
 
         string.split('\r\n').pop(0)
         self._headers = self.headers_by_string(string)
 
-        string = self.string.split(' ')
-
-        self._route = 'index.html' if string[1].lstrip('/') == '' else string[1].lstrip('/')
-        self._method = string[0]
 
     @property
     def params(self):
@@ -27,14 +24,6 @@ class Request(object):
     @string.setter
     def string(self, string):
         self._string = string
-
-    @property
-    def route(self):
-        return self._route
-
-    @route.setter
-    def route(self, route):
-        self._route = route
 
     @property
     def method(self):

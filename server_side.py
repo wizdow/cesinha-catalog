@@ -1,6 +1,6 @@
 import socket
-import http_response
-import http_request
+import threading
+import threaded
 
 HOST = socket.gethostbyname(socket.gethostname())
 PORT = 4000
@@ -17,7 +17,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
     # socket.gethostname() returns the hostname's machine
 
     print(f'Try to connect: {HOST}:{PORT}')
-    
+
     tcp.bind((HOST, PORT))
 
     # define the number of pending connections the queue will hold
@@ -32,16 +32,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
         # return a new socket representing the connection, and the address of the client
         (conn, addr) = tcp.accept()
 
-        with conn:
-            # return a object w/ sent bytes by client
-            # the value of bufsize should be a relatively small power of 2
-            data = conn.recv(1024).decode('utf-8')
-
-            request = http_request.Request(data)
-
-            response = http_response.Response(request)
-
-            conn.sendall(response.get_response())
-            conn.close()
-        
-    tcp.close()
+        threading.Thread(target=threaded.Thread, args=(conn,)).start()
+tcp.close()

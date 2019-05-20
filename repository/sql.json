@@ -1,0 +1,142 @@
+[
+  {
+    "type": 1,
+    "assigned": "DEIVSON SALES",
+    "course": "GEOMETRIA ANALITICA",
+    "title": "2017.1",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "MEUSER VALENCA",
+    "course": "LOGICA",
+    "title": "2017.1",
+    "price": "5.00"
+  },
+  {
+    "type": 1,
+    "assigned": "MIRNA PIMENTEL",
+    "course": "SOCIOLOGIA E MEIO AMBIENTE",
+    "title": "2017.1",
+    "price": "2.00"
+  },
+  {
+    "type": 1,
+    "assigned": "CLETO FRANCA",
+    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 1",
+    "title": "2017.1",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "JOABE JESUS",
+    "course": "LINGUAGEM DE PROGRAMAÇAO IMPERATIVA",
+    "title": "2017.1",
+    "price": "5.00"
+  },
+  {
+    "type": 1,
+    "assigned": "LUCIA PEREIRA",
+    "course": "QUIMICA GERAL",
+    "title": "2017.1",
+    "price": "2.00"
+  },
+  {
+    "type": 1,
+    "assigned": "BRUNO FERNANDES",
+    "course": "LINGUAGEM DE PROGRAMAÇAO ORIENTADA A OBJETOS",
+    "title": "2017.2",
+    "price": "5.00"
+  },
+  {
+    "type": 1,
+    "assigned": "KARINNE VIEIRA",
+    "course": "ENGENHARIA ECONOMICA",
+    "title": "2017.2",
+    "price": "5.00"
+  },
+  {
+    "type": 1,
+    "assigned": "JOSE LESSA",
+    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 2",
+    "title": "2017.2",
+    "price": "4.00"
+  },
+  {
+    "type": 1,
+    "assigned": "JOSE MACIEL",
+    "course": "ALGEBRA LINEAR",
+    "title": "2017.2",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "AUGUSTO DE LIMA",
+    "course": "FISICA 1",
+    "title": "2017.2",
+    "price": "4.00"
+  },
+  {
+    "type": 1,
+    "assigned": "ANDREA DE MORAES",
+    "course": "EXPRESSÃO GRÁFICA 1",
+    "title": "2017.2",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "JOSENEIDE DE BARROS",
+    "course": "EXPRESSÃO EM LINGUA PORTUGUESA",
+    "title": "2017.2",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "CLETO DE FRANCA",
+    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 3",
+    "title": "2018.1",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "JOSE PAULO",
+    "course": "ELETRONICA PARA COMPUTAÇÃO",
+    "title": "2019.1",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "ELIANE LOIOLA",
+    "course": "ALGEBRA APLICADA A COMPUTAÇÃO",
+    "title": "2018.1",
+    "price": "5.00"
+  },
+  {
+    "type": 1,
+    "assigned": "BYRON LEITE",
+    "course": "ESTRUTURAS DE DADOS",
+    "title": "2018.1",
+    "price": "3.00"
+  },
+  {
+    "type": 1,
+    "assigned": "OSMUNDO DONATO DA SILVA NETO",
+    "course": "MECANICA 1",
+    "title": "2018.1",
+    "price": "6.00"
+  },
+  {
+    "type": 1,
+    "assigned": "SERGIO GALDINO",
+    "course": "CÁLCULO NUMERICO",
+    "title": "2019.1",
+    "price": "1.00"
+  },
+  {
+    "type": 1,
+    "assigned": "HELDIO VILLAR",
+    "course": "FISICA 2",
+    "title": "2018.1",
+    "price": "54.00"
+  }
+]
