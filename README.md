@@ -2,6 +2,11 @@
 
 First you need install [Python 3](https://realpython.com/installing-python/).
 
+## Description
+
+Construction of a website based on a catalog of copies of a university.
+The site server is made with the python socket base architecture to receive TCP protocols.
+It was also done with threading to improve the receipt of requests on the site.
 ## Libraries
 
 ```
