@@ -1,4 +1,4 @@
-# Cesinha Catolog
+# Xerox POLI Web Catolog
 
 First you need install [Python 3](https://realpython.com/installing-python/).
 
