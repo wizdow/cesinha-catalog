@@ -1,65 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="fonts/icon.css" rel="stylesheet">
+    <link type="text/css" href="css/index.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
-
-    <title>Cesinha WEB Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <audio id="audio" src="audio/logoclick.mp3" autoplay="false"></audio>
+    <title>XEROX WEB Catalog</title>
   </head>
+
   <body>
-    <div class="content">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Livros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Provas</a>
-          </li>
+    <!-- NAVBAR -->
+    <div class="row z-depth-1 orange lighten-4">
+      <div class="col">
+        <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small pulse sidenav-trigger show-on-large orange darken-3">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
 
-          <div style="margin-left: 846px;">
-              <a href="http://upe.poli.br/">
-                <img alt="Escola Politécnica de Pernambuco" target="_blank" src="images/logoPOLI.png" width="80" height="40">
-              </a>
-              <a href="http://www.upe.br/" target="_blank" style="margin-left: 10px;">
-                <img alt="Universidade de Pernambucp" src="images/logoUPE.jpg" width="80" height="40">
-              </a>
-            </div>
+      <div class="col">
+        <ul class="tabs orange lighten-4">
+          <li class="tab"><a href="#books-table">Provas</a></li>
+          <li class="tab"><a class="active" href="#exames-table">Exercícios Escolares</a></li>
         </ul>
+      </div>
 
-        <div class="tab-content card" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <table class="table" id="table" style="margin: 0;">
-                  <thead>
-                    <tr>
-                      <th data-field="name">Cadeira</th>
-                      <th data-field="teacher">Autor(a)</th>
-                      <th data-field="class">Título</th>
-                    </tr>
-                  </thead>
-                  <tbody id="books">
-                  </tbody>
-                </table>
-          </div>
-          <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
-              <table class="table" id="table1" style="margin: 0;">
-                  <thead>
-                    <tr>
-                      <th scope="col">Cadeira</th>
-                      <th scope="col">Professor(a)</th>
-                      <th scope="col">Período</th>
-                    </tr>
-                  </thead>
-                  <tbody id="exames">
-                  </tbody>
-                </table>
-          </div>
-        </div>
+      <div id="news" class="col s8 marquee red-text lighten-1">
+        A aula de <b>Redes de Computadores I</b> está sendo ministrada agora!
+      </div>
     </div>
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <!-- SIDEBAR -->
+    <ul id="slide-out" class="sidenav">
+      <div class="background books">
+        <a class="tooltipped" href="#" onclick="playSound();" data-position="bottom" data-tooltip="Clique e ouça!">
+          <img class="logo responsive-img logo-shadow" src="images/book-move.gif">
+        </a>
+      </div>
+      
+      <p class="text-sidebar">
+        Este é um exemplo de caso utilizado para demonstrar as funcionalidades apresentadas pela teoria dos <b>sockets</b>, <b>TCP</b>, <b>Python</b>, <b>Threading</b>, <b>HTTP request</b>,  etc. Também reforçamos que foi utilizado de todo o conhecimento aplicado para HTML, CSS, Javascript, jQuery, JSON com uma filosofia simplificada do <b>MVC</b> (<b>M</b>odel, <b>V</b>iew, <b>C</b>ontrollers).
+      </p>
+
+      <ul>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="https://github.com/wizdow" target="_blank"><i class="material-icons">thumb_up</i>Jair Medeiros</a></li>
+        <li><a class="waves-effect" href="https://github.com/ja1goncalves" target="_blank"><i class="material-icons">thumb_up</i>João Gonçalves</a></li>
+        <li><a class="waves-effect" href="https://github.com/iannatal" target="_blank"><i class="material-icons">thumb_up</i>Ian Marcos</a></li>
+      </ul>
+    </ul>
+
+    <!-- TABLE CONTENT -->
+    <div id="books-table">
+      <table class="responsive-table highlight">
+        <thead class="orange accent-2">
+            <tr class="red-text lighten-1">
+              <th>CADEIRA</th>
+              <th>AUTOR(A)</th>
+              <th>LIVRO</th>
+              <th>PREÇO</th>
+            </tr>
+          </thead>
+          <tbody id="books" class="orange lighten-5">
+            <!-- JSON -->
+          </tbody>
+      </table>
+    </div>
+    <div id="exames-table">
+      <table class="responsive-table highlight">
+        <thead class="orange accent-2">
+          <tr class="red-text lighten-1">
+            <th>CADEIRA</th>
+            <th>PROFESSOR(A)</th>
+            <th>PERÍODO</th>
+            <th>PREÇO</th>
+          </tr>
+        </thead>
+        <tbody id="exames" class="orange lighten-5">
+          <!-- JSON -->
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+      //  TABLE
+      $(document).ready(function(){
+        $('.tabs').tabs();
+      });
+
+      //  SIDENAV
+      $(document).ready(function(){
+        $('.sidenav').sidenav({
+          draggable: true
+        });
+      });
+
+      //  MARQUEE
+      $(function () {
+        $('.marquee').marquee({
+          duration: 5000
+        });
+      });
+
+      //  PLAY SOUND ONCLICK
+      function playSound() {
+        var sound = document.getElementById("audio");
+        sound.play();
+      }
+
+      //  TOOLTIP
+      $(document).ready(function(){
+        $('.tooltipped').tooltip();
+      });
+    </script>
   </body>
 </html>

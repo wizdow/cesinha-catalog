@@ -1,6 +1,6 @@
 import json
 import mimetypes
-from services.html_controller import HtmlController
+from controllers.html_controller import HtmlController
 
 
 class Response(object):
@@ -58,7 +58,7 @@ class Response(object):
 
         try:
             if self.request == 'index.html':
-                file_json = open('API_simulated.json', 'rb')
+                file_json = open('services/sql.json', 'rb')
                 html = open(self.request, 'rb')
                 body = self.get_body_with_json(file_json.read(), html.read())
                 file_json.close()

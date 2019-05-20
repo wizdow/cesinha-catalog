@@ -1,0 +1,50 @@
+body{
+  background-color: whitesmoke;
+  margin: 0 0 0 0;
+}
+
+.books{
+  background-image: url("../images/sidenav-background.jpg");
+  background-repeat: no-repeat;
+  height: 235px;
+  max-width: 100%;
+  background-size: cover;
+}
+
+.logo-shadow{
+  -webkit-box-shadow: -1px 18px 13px -3px rgba(0,0,0,0.62);
+  -moz-box-shadow: -1px 18px 13px -3px rgba(0,0,0,0.62);
+  box-shadow: -1px 18px 13px -3px rgba(0,0,0,0.62);
+}
+
+.logo{
+  margin-left: 50px;
+  margin-top: 45px;
+  height: 180px;
+  width: 180px;
+}
+
+.btn-sidenav{
+  margin-top: 6px;
+  margin-right: -10px;
+}
+
+.marquee {
+  font-size: 20px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.table-content{
+  margin-top: 0px;
+}
+
+.text-sidebar{
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.table-fix{
+  height: 100% !important;
+}

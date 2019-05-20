@@ -19,7 +19,7 @@ class HtmlController(object):
             table = self.html.find(id="books")
             row = self.html.new_tag("tr")
 
-            column = self.html.new_tag("th", scope="row")
+            column = self.html.new_tag("th")
             column.append(file['course'])
             row.append(column)
 
@@ -29,6 +29,10 @@ class HtmlController(object):
 
             column = self.html.new_tag("td")
             column.append(file['title'])
+            row.append(column)
+
+            column = self.html.new_tag("td")
+            column.append("R$" + file['price'])
             row.append(column)
 
             table.append(row)
@@ -36,7 +40,7 @@ class HtmlController(object):
             table = self.html.find(id="exames")
             row = self.html.new_tag("tr")
 
-            column = self.html.new_tag("th", scope="row")
+            column = self.html.new_tag("th")
             column.append(file['course'])
             row.append(column)
 
@@ -46,6 +50,10 @@ class HtmlController(object):
 
             column = self.html.new_tag("td")
             column.append(file['title'])
+            row.append(column)
+
+            column = self.html.new_tag("td")
+            column.append("R$" + file['price'])
             row.append(column)
 
             table.append(row)
