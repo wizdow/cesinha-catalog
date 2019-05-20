@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 
-class HtmlController(object):
+class IndexController(object):
 
     def __init__(self, response, link):
         self._html = BeautifulSoup(response, link)

@@ -1,6 +1,6 @@
 import json
 import mimetypes
-from controllers.html_controller import HtmlController
+from Http.controllers.index_controller import IndexController
 
 
 class Response(object):
@@ -58,7 +58,7 @@ class Response(object):
 
         try:
             if self.request == 'index.html':
-                file_json = open('services/sql.json', 'rb')
+                file_json = open('repository/sql.json', 'rb')
                 html = open(self.request, 'rb')
                 body = self.get_body_with_json(file_json.read(), html.read())
                 file_json.close()
@@ -76,7 +76,7 @@ class Response(object):
     @staticmethod
     def get_body_with_json(file_json, response):
 
-        html = HtmlController(response, 'html.parser')
+        html = IndexController(response, 'html.parser')
         files = json.loads(file_json)
 
         for file in files:

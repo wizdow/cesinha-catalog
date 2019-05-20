@@ -1,4 +1,4 @@
-from controllers.http import http_request, http_response
+from Http import http_response, http_request
 
 
 class Thread(object):
