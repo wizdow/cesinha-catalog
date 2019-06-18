@@ -31,7 +31,7 @@ class IndexController(object):
 
     def fill_files_in_index(self, file, type_file):
         button_view = self.button("btn orange darken-3", f"edit({file['id']})", "Detalhes")
-        button_delete = self.button("btn btn-danger", f"edit({file['id']})", "Deletar")
+        button_delete = self.button("btn btn-danger", f"deleted({file['id']})", "Deletar")
 
         i_eye = self.tag_i("material-icons")
         i_eye.append("visibility")

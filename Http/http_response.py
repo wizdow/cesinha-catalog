@@ -50,7 +50,15 @@ class Response(object):
 
         try:
             headers = 'HTTP/1.1 200 OK\r\n'
-            mime_type = mimetypes.guess_type(self.route.path)[0]
+
+            if self.route.attr['function'] == 'edit':
+                mime_type = mimetypes.guess_type('.html')[0]
+            elif self.route.attr['function'] == 'delete':
+                mime_type = mimetypes.guess_type('.html')[0]
+            elif self.route.attr['function'] == 'create':
+                mime_type = mimetypes.guess_type('.html')[0]
+            else:
+                mime_type = mimetypes.guess_type(self.route.attr['function'])[0]
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
@@ -66,14 +74,14 @@ class Response(object):
             return self.body
 
         try:
-            if self.route.path == 'index.html':
+            if self.route.attr['path'] == 'index.html':
                 file_json = open('repository/sql.json', 'rb')
-                html = open(self.route.path, 'rb')
+                html = open(self.route.attr['path'], 'rb')
                 body = self.get_body_with_json(file_json.read(), html.read())
                 file_json.close()
                 html.close()
             else:
-                file = open(self.route.path, 'rb')
+                file = open(self.route.attr['path'], 'rb')
                 body = file.read()
                 file.close()
 
