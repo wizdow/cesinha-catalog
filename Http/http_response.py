@@ -62,9 +62,9 @@ class Response(object):
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
-        except Exception:
+        except Exception as e:
             headers = 'HTTP/1.1 404 Not Found\r\n\r\n'
-            self._body('Error 404: File not found\r\n')
+            self._body(f"Error 404: File not found\r\n{e}\r\n")
 
         return headers
 
@@ -80,15 +80,45 @@ class Response(object):
                 body = self.get_body_with_json(file_json.read(), html.read())
                 file_json.close()
                 html.close()
+            elif self.route.attr['function'] == 'edit':
+                id_file = self.route.attr['params'][0]
+
+                file_json = open('repository/sql.json', 'rb')
+                html = open(self.route.attr['path'], 'rb')
+                body = self.edit(id_file, file_json.read(), html.read())
+                file_json.close()
+                html.close()
+            elif self.route.attr['function'] == 'create':
+                body = self.create()
+            elif self.route.attr['function'] == 'delete':
+                body = self.delete()
             else:
                 file = open(self.route.attr['path'], 'rb')
                 body = file.read()
                 file.close()
 
-        except Exception:
-            return 'Error 404: File not found\r\n'.encode('utf-8')
+        except Exception as e:
+            return f"Error 404: File not found\r\n{e}\r\n".encode('utf-8')
 
         return body
+
+    @staticmethod
+    def edit(id_file, file_json, response):
+        html = IndexController(response, 'html.parser')
+        files = json.loads(file_json)
+
+        for file in files:
+            if file['id'] == id_file:
+                html.get_edit_in_index(file)
+                break
+
+        return html.html.encode('utf-8')
+
+    def delete(self):
+        return ''
+
+    def create(self):
+        return ''
 
     @staticmethod
     def get_body_with_json(file_json, response):
