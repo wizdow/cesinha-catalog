@@ -102,22 +102,22 @@ class Response(object):
     @staticmethod
     def edit(id_file, file_json):
         response = {
-            'data': '',
-            'status': 500,
-            'message': 'File not found.'
+            "data": "",
+            "status": 500,
+            "message": "File not found."
         }
         files = json.loads(file_json)
 
         for file in files:
             if file['id'] == int(id_file):
                 response = {
-                    'data': file,
-                    'status': 200,
-                    'message': 'File found successfully.'
+                    "data": file,
+                    "status": 200,
+                    "message": "File found successfully."
                 }
                 break
 
-        return str(response).encode('utf-8')
+        return json.dumps(response).encode('utf-8')
 
     def delete(self):
         return ''

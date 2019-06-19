@@ -48,3 +48,8 @@ body{
 .table-fix{
   height: 100% !important;
 }
+
+.column{
+  float: left;
+  width: 25%;
+}
