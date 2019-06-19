@@ -1,300 +1,290 @@
 [
-  {
-    "id": 1,
-    "type": 1,
-    "assigned": "DEIVSON SALES",
-    "course": "GEOMETRIA ANALITICA",
-    "title": "2017.1",
-    "price": "3.00"
-  },
-  {
-    "id": 2,
-    "type": 1,
-    "assigned": "MEUSER VALENCA",
-    "course": "LOGICA",
-    "title": "2017.1",
-    "price": "5.00"
-  },
-  {
-    "id": 3,
-    "type": 1,
-    "assigned": "MIRNA PIMENTEL",
-    "course": "SOCIOLOGIA E MEIO AMBIENTE",
-    "title": "2017.1",
-    "price": "2.00"
-  },
-  {
-    "id": 4,
-    "type": 1,
-    "assigned": "CLETO FRANCA",
-    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 1",
-    "title": "2017.1",
-    "price": "3.00"
-  },
-  {
-    "id": 5,
-    "type": 1,
-    "assigned": "JOABE JESUS",
-    "course": "LINGUAGEM DE PROGRAMAÇAO IMPERATIVA",
-    "title": "2017.1",
-    "price": "5.00"
-  },
-  {
-    "id": 6,
-    "type": 1,
-    "assigned": "LUCIA PEREIRA",
-    "course": "QUIMICA GERAL",
-    "title": "2017.1",
-    "price": "2.00"
-  },
-  {
-    "id": 7,
-    "type": 1,
-    "assigned": "BRUNO FERNANDES",
-    "course": "LINGUAGEM DE PROGRAMAÇAO ORIENTADA A OBJETOS",
-    "title": "2017.2",
-    "price": "5.00"
-  },
-  {
-    "id": 8,
-    "type": 1,
-    "assigned": "KARINNE VIEIRA",
-    "course": "ENGENHARIA ECONOMICA",
-    "title": "2017.2",
-    "price": "5.00"
-  },
-  {
-    "id": 9,
-    "type": 1,
-    "assigned": "JOSE LESSA",
-    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 2",
-    "title": "2017.2",
-    "price": "4.00"
-  },
-  {
-    "id": 10,
-    "type": 1,
-    "assigned": "JOSE MACIEL",
-    "course": "ALGEBRA LINEAR",
-    "title": "2017.2",
-    "price": "3.00"
-  },
-  {
-    "id": 11,
-    "type": 1,
-    "assigned": "AUGUSTO DE LIMA",
-    "course": "FISICA 1",
-    "title": "2017.2",
-    "price": "4.00"
-  },
-  {
-    "id": 12,
-    "type": 1,
-    "assigned": "ANDREA DE MORAES",
-    "course": "EXPRESSÃO GRÁFICA 1",
-    "title": "2017.2",
-    "price": "3.00"
-  },
-  {
-    "id": 13,
-    "type": 1,
-    "assigned": "JOSENEIDE DE BARROS",
-    "course": "EXPRESSÃO EM LINGUA PORTUGUESA",
-    "title": "2017.2",
-    "price": "3.00"
-  },
-  {
-    "id": 14,
-    "type": 1,
-    "assigned": "CLETO DE FRANCA",
-    "course": "CÁLCULO DIFERENCIAL E INTEGRAL 3",
-    "title": "2018.1",
-    "price": "3.00"
-  },
-  {
-    "id": 15,
-    "type": 1,
-    "assigned": "JOSE PAULO",
-    "course": "ELETRONICA PARA COMPUTAÇÃO",
-    "title": "2019.1",
-    "price": "3.00"
-  },
-  {
-    "id": 16,
-    "type": 1,
-    "assigned": "ELIANE LOIOLA",
-    "course": "ALGEBRA APLICADA A COMPUTAÇÃO",
-    "title": "2018.1",
-    "price": "5.00"
-  },
-  {
-    "id": 17,
-    "type": 1,
-    "assigned": "BYRON LEITE",
-    "course": "ESTRUTURAS DE DADOS",
-    "title": "2018.1",
-    "price": "3.00"
-  },
-  {
-    "id": 18,
-    "type": 1,
-    "assigned": "OSMUNDO DONATO DA SILVA NETO",
-    "course": "MECANICA 1",
-    "title": "2018.1",
-    "price": "6.00"
-  },
-  {
-    "id": 19,
-    "type": 1,
-    "assigned": "SERGIO GALDINO",
-    "course": "CÁLCULO NUMERICO",
-    "title": "2019.1",
-    "price": "1.00"
-  },
-  {
-    "id": 20,
-    "type": 1,
-    "assigned": "HELDIO VILLAR",
-    "course": "FISICA 2",
-    "title": "2018.1",
-    "price": "54.00"
-  },
-  {
-    "id": 21,
-    "type": 0,
-    "assigned": "James Stewart",
-    "course": "Cálculo Diferencial e Integral 1",
-    "title": "Cálculo 1, James Stewart",
-    "price": "113.90"
-  },
-  {
-    "id": 22,
-    "type": 0,
-    "assigned": "James Stewart",
-    "course": "Cálculo Diferencial e Integral 2",
-    "title": "Cálculo 2, James Stewart",
-    "price": "115.80"
-  },
-  {
-    "id": 23,
-    "type": 0,
-    "assigned": "Alfredo Steinbruch",
-    "course": "Geometria Analítica",
-    "title": "Geometria Analítica",
-    "price": "196.00"
-  },
-  {
-    "id": 24,
-    "type": 0,
-    "assigned": "Mark Thomas Holtzapple",
-    "course": "Introdução à Engenharia",
-    "title": "Introdução à Engenharia",
-    "price": "129.00"
-  },
-  {
-    "id": 25,
-    "type": 0,
-    "assigned": "Carlos Alberto Callioli",
-    "course": "Álgebra Linear",
-    "title": "Álgebra linear e aplicações",
-    "price": "150.00"
-  },
-  {
-    "id": 26,
-    "type": 0,
-    "assigned": "Halliday & Resnick",
-    "course": "Física 1",
-    "title": "Fundamentos da Física - Volume 1 - Mecânica",
-    "price": "98.90"
-  },
-  {
-    "id": 27,
-    "type": 0,
-    "assigned": "Halliday & Resnick",
-    "course": "Física 2",
-    "title": "Fundamentos da Física - Volume 3 - Eletromagnetismo",
-    "price": "120.40"
-  },
-  {
-    "id": 28,
-    "type": 0,
-    "assigned": "Callister",
-    "course": "Ciência dos Materiais",
-    "title": "Ciência e Engenharia de Materiais - Uma Introdução - 9ª Ed.",
-    "price": "222.90"
-  },
-  {
-    "id": 29,
-    "type": 0,
-    "assigned": "Carlos Patrício Samanez",
-    "course": "Engenharia Econômica",
-    "title": "Engenharia Econômica",
-    "price": "90.95"
-  },
-  {
-    "id": 30,
-    "type": 0,
-    "assigned": "Ferdinand Pierre Beer",
-    "course": "Mecânica 1",
-    "title": " Mecânica Vetorial Para Engenheiros - Estática",
-    "price": "98.00"
-  },
-  {
-    "id": 31,
-    "type": 0,
-    "assigned": "Judith L. Gersting",
-    "course": "Álgebra Aplicada à Computação",
-    "title": "Fundamentos matemáticos para ciência da computação",
-    "price": "227.90"
-  },
-  {
-    "id": 32,
-    "type": 0,
-    "assigned": "Charles K. Alexander",
-    "course": "Circuitos Elétricos 1",
-    "title": "Fundamentos e circuitos elétricos",
-    "price": "157.90"
-  },
-  {
-    "id": 33,
-    "type": 0,
-    "assigned": "Woodrow Nelson Lopes Roma",
-    "course": "Fenômenos de Transporte",
-    "title": "Fenômenos de Transporte Para Engenharia",
-    "price": "69.00"
-  },
-  {
-    "id": 34,
-    "type": 0,
-    "assigned": "Hwei P. HSU",
-    "course": "Sinais e Sistemas",
-    "title": "Sinais e Sistemas - Coleção Schaum",
-    "price": "189.90"
-  },
-  {
-    "id": 35,
-    "type": 0,
-    "assigned": "James Stweart",
-    "course": "Cálculo Diferencial e Integral 3",
-    "title": "Cálculo 3 - James Stweart",
-    "price": "114.00"
-  },
-  {
-    "id": 36,
-    "type": 0,
-    "assigned": "Halliday & Resnick",
-    "course": "Física 3",
-    "title": "Fundamentos da Física - Volume 4 - Ótica e Física Moderna",
-    "price": "122.90"
-  },
-  {
-    "id": 37,
-    "type": 0,
-    "assigned": "Halliday & Resnick",
-    "course": "Física 3",
-    "title": "Fundamentos da Física - Volume 2 - Gravitação, Ondas e Termodinâmica",
-    "price": "89.00"
-  }
-
-
-]
+	{
+		"id": 1,
+		"type": 1,
+		"assigned": "DEIVSON SALES",
+		"course": "GEOMETRIA ANALITICA",
+		"title": "2017.1",
+		"price": "3.00"
+	},
+	{
+		"id": 2,
+		"type": 1,
+		"assigned": "MEUSER VALENCA",
+		"course": "LOGICA",
+		"title": "2017.1",
+		"price": "5.00"
+	},
+	{
+		"id": 3,
+		"type": 1,
+		"assigned": "MIRNA PIMENTEL",
+		"course": "SOCIOLOGIA E MEIO AMBIENTE",
+		"title": "2017.1",
+		"price": "2.00"
+	},
+	{
+		"id": 4,
+		"type": 1,
+		"assigned": "CLETO FRANCA",
+		"course": "CÁLCULO DIFERENCIAL E INTEGRAL 1",
+		"title": "2017.1",
+		"price": "3.00"
+	},
+	{
+		"id": 5,
+		"type": 1,
+		"assigned": "JOABE JESUS",
+		"course": "LINGUAGEM DE PROGRAMAÇAO IMPERATIVA",
+		"title": "2017.1",
+		"price": "5.00"
+	},
+	{
+		"id": 6,
+		"type": 1,
+		"assigned": "LUCIA PEREIRA",
+		"course": "QUIMICA GERAL",
+		"title": "2017.1",
+		"price": "2.00"
+	},
+	{
+		"id": 7,
+		"type": 1,
+		"assigned": "BRUNO FERNANDES",
+		"course": "LINGUAGEM DE PROGRAMAÇAO ORIENTADA A OBJETOS",
+		"title": "2017.2",
+		"price": "5.00"
+	},
+	{
+		"id": 8,
+		"type": 1,
+		"assigned": "KARINNE VIEIRA",
+		"course": "ENGENHARIA ECONOMICA",
+		"title": "2017.2",
+		"price": "5.00"
+	},
+	{
+		"id": 9,
+		"type": 1,
+		"assigned": "JOSE LESSA",
+		"course": "CÁLCULO DIFERENCIAL E INTEGRAL 2",
+		"title": "2017.2",
+		"price": "4.00"
+	},
+	{
+		"id": 10,
+		"type": 1,
+		"assigned": "JOSE MACIEL",
+		"course": "ALGEBRA LINEAR",
+		"title": "2017.2",
+		"price": "3.00"
+	},
+	{
+		"id": 11,
+		"type": 1,
+		"assigned": "AUGUSTO DE LIMA",
+		"course": "FISICA 1",
+		"title": "2017.2",
+		"price": "4.00"
+	},
+	{
+		"id": 12,
+		"type": 1,
+		"assigned": "ANDREA DE MORAES",
+		"course": "EXPRESSÃO GRÁFICA 1",
+		"title": "2017.2",
+		"price": "3.00"
+	},
+	{
+		"id": 13,
+		"type": 1,
+		"assigned": "JOSENEIDE DE BARROS",
+		"course": "EXPRESSÃO EM LINGUA PORTUGUESA",
+		"title": "2017.2",
+		"price": "3.00"
+	},
+	{
+		"id": 14,
+		"type": 1,
+		"assigned": "CLETO DE FRANCA",
+		"course": "CÁLCULO DIFERENCIAL E INTEGRAL 3",
+		"title": "2018.1",
+		"price": "3.00"
+	},
+	{
+		"id": 15,
+		"type": 1,
+		"assigned": "JOSE PAULO",
+		"course": "ELETRONICA PARA COMPUTAÇÃO",
+		"title": "2019.1",
+		"price": "3.00"
+	},
+	{
+		"id": 16,
+		"type": 1,
+		"assigned": "ELIANE LOIOLA",
+		"course": "ALGEBRA APLICADA A COMPUTAÇÃO",
+		"title": "2018.1",
+		"price": "5.00"
+	},
+	{
+		"id": 17,
+		"type": 1,
+		"assigned": "BYRON LEITE",
+		"course": "ESTRUTURAS DE DADOS",
+		"title": "2018.1",
+		"price": "3.00"
+	},
+	{
+		"id": 18,
+		"type": 1,
+		"assigned": "OSMUNDO DONATO DA SILVA NETO",
+		"course": "MECANICA 1",
+		"title": "2018.1",
+		"price": "6.00"
+	},
+	{
+		"id": 19,
+		"type": 1,
+		"assigned": "SERGIO GALDINO",
+		"course": "CÁLCULO NUMERICO",
+		"title": "2019.1",
+		"price": "1.00"
+	},
+	{
+		"id": 20,
+		"type": 1,
+		"assigned": "HELDIO VILLAR",
+		"course": "FISICA 2",
+		"title": "2018.1",
+		"price": "54.00"
+	},
+	{
+		"id": 22,
+		"type": 0,
+		"assigned": "James Stewart",
+		"course": "Cálculo Diferencial e Integral 2",
+		"title": "Cálculo 2, James Stewart",
+		"price": "115.80"
+	},
+	{
+		"id": 23,
+		"type": 0,
+		"assigned": "Alfredo Steinbruch",
+		"course": "Geometria Analítica",
+		"title": "Geometria Analítica",
+		"price": "196.00"
+	},
+	{
+		"id": 24,
+		"type": 0,
+		"assigned": "Mark Thomas Holtzapple",
+		"course": "Introdução à Engenharia",
+		"title": "Introdução à Engenharia",
+		"price": "129.00"
+	},
+	{
+		"id": 25,
+		"type": 0,
+		"assigned": "Carlos Alberto Callioli",
+		"course": "Álgebra Linear",
+		"title": "Álgebra linear e aplicações",
+		"price": "150.00"
+	},
+	{
+		"id": 26,
+		"type": 0,
+		"assigned": "Halliday & Resnick",
+		"course": "Física 1",
+		"title": "Fundamentos da Física - Volume 1 - Mecânica",
+		"price": "98.90"
+	},
+	{
+		"id": 27,
+		"type": 0,
+		"assigned": "Halliday & Resnick",
+		"course": "Física 2",
+		"title": "Fundamentos da Física - Volume 3 - Eletromagnetismo",
+		"price": "120.40"
+	},
+	{
+		"id": 28,
+		"type": 0,
+		"assigned": "Callister",
+		"course": "Ciência dos Materiais",
+		"title": "Ciência e Engenharia de Materiais - Uma Introdução - 9ª Ed.",
+		"price": "222.90"
+	},
+	{
+		"id": 29,
+		"type": 0,
+		"assigned": "Carlos Patrício Samanez",
+		"course": "Engenharia Econômica",
+		"title": "Engenharia Econômica",
+		"price": "90.95"
+	},
+	{
+		"id": 30,
+		"type": 0,
+		"assigned": "Ferdinand Pierre Beer",
+		"course": "Mecânica 1",
+		"title": " Mecânica Vetorial Para Engenheiros - Estática",
+		"price": "98.00"
+	},
+	{
+		"id": 31,
+		"type": 0,
+		"assigned": "Judith L. Gersting",
+		"course": "Álgebra Aplicada à Computação",
+		"title": "Fundamentos matemáticos para ciência da computação",
+		"price": "227.90"
+	},
+	{
+		"id": 32,
+		"type": 0,
+		"assigned": "Charles K. Alexander",
+		"course": "Circuitos Elétricos 1",
+		"title": "Fundamentos e circuitos elétricos",
+		"price": "157.90"
+	},
+	{
+		"id": 33,
+		"type": 0,
+		"assigned": "Woodrow Nelson Lopes Roma",
+		"course": "Fenômenos de Transporte",
+		"title": "Fenômenos de Transporte Para Engenharia",
+		"price": "69.00"
+	},
+	{
+		"id": 34,
+		"type": 0,
+		"assigned": "Hwei P. HSU",
+		"course": "Sinais e Sistemas",
+		"title": "Sinais e Sistemas - Coleção Schaum",
+		"price": "189.90"
+	},
+	{
+		"id": 35,
+		"type": 0,
+		"assigned": "James Stweart",
+		"course": "Cálculo Diferencial e Integral 3",
+		"title": "Cálculo 3 - James Stweart",
+		"price": "114.00"
+	},
+	{
+		"id": 36,
+		"type": 0,
+		"assigned": "Halliday & Resnick",
+		"course": "Física 3",
+		"title": "Fundamentos da Física - Volume 4 - Ótica e Física Moderna",
+		"price": "122.90"
+	},
+	{
+		"id": 37,
+		"type": 0,
+		"assigned": "Halliday & Resnick",
+		"course": "Física 3",
+		"title": "Fundamentos da Física - Volume 2 - Gravitação, Ondas e Termodinâmica",
+		"price": "89.00"
+	},
+[

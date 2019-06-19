@@ -89,9 +89,7 @@ class Response(object):
                 body = self.create()
             elif self.route.attr['function'] == 'delete':
                 id_file = self.route.attr['params'][0]
-                file_json = open('repository/sql_copy.json', 'w')
-                body = self.delete(id_file, file_json)
-                file_json.close()
+                body = self.delete(id_file, 'repository/sql.json')
             else:
                 file = open(self.route.attr['path'], 'rb')
                 body = file.read()
@@ -122,16 +120,19 @@ class Response(object):
 
         return json.dumps(response).encode('utf-8')
 
-    @staticmethod
-    def delete(id_file, file_json):
+    def delete(self, id_file, path_json):
         response = {
             "data": "",
             "status": 500,
             "message": "File not found."
         }
+
+        file_json = open(path_json, 'rb')
         files = file_json.read()
         files = json.loads(files)
-        new_file = []
+        file_json.close()
+
+        new_files = []
 
         for file in files:
             if file['id'] == int(id_file):
@@ -141,15 +142,29 @@ class Response(object):
                     "message": "Xerox deleted successfully."
                 }
             else:
-                new_file.append(file)
+                new_files.append(file)
 
-        new_file = json.dumps(new_file)
-        file_json.write(json.load(new_file))
+        self.write_json(new_files, path_json)
 
         return json.dumps(response).encode('utf-8')
 
     def create(self):
         return ''
+
+    @staticmethod
+    def write_json(list_json, path_json):
+        with open(path_json, 'w') as f:
+            f.write('[\n')
+            for file in list_json:
+                f.write('\t{\n')
+                f.write('\t\t"id": %s,\n' % file['id'])
+                f.write('\t\t"type": %s,\n' % file['type'])
+                f.write('\t\t"assigned": "%s",\n' % file['assigned'])
+                f.write('\t\t"course": "%s",\n' % file['course'])
+                f.write('\t\t"title": "%s",\n' % file['title'])
+                f.write('\t\t"price": "%s"\n' % file['price'])
+                f.write('\t}\n') if file['id'] == list_json[-1]['id'] else f.write('\t},\n')
+            f.write(']\n')
 
     @staticmethod
     def get_body_with_json(file_json, response):
