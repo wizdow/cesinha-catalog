@@ -148,8 +148,24 @@ class Response(object):
 
         return json.dumps(response).encode('utf-8')
 
-    def create(self):
-        return ''
+    def create(self, data, path_json):
+        response = {
+            "data": "",
+            "status": 200,
+            "message": "File created successfully!"
+        }
+
+        file_json = open(path_json, 'rb')
+        files = file_json.read()
+        files = json.loads(files)
+        file_json.close()
+
+        data['id'] = files[-1]['id'] + 1
+        files.append(data)
+
+        self.write_json(files, path_json)
+
+        return json.dumps(response).encode('utf-8')
 
     @staticmethod
     def write_json(list_json, path_json):
