@@ -41,8 +41,20 @@ function edit(id) {
 
 function deleted(id) {
     var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.onreadystatechange = function() {
+        if(this.readyState == XMLHttpRequest.DONE){
+            var response = JSON.parse(this.responseText);
+            alert(response.message)
+            setTimeout(function() {
+              location.reload();
+            }, 30000);
+        }
+    }
+
     var url = "http://10.1.1.105:4000/xerox/delete/" + id;
     xmlHttp.open("DELETE", url);
+    xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send();
 }
 

@@ -54,7 +54,7 @@ class Response(object):
             if self.route.attr['function'] == 'edit':
                 mime_type = mimetypes.guess_type('anyway.json')[0]
             elif self.route.attr['function'] == 'delete':
-                mime_type = mimetypes.guess_type('anyway.html')[0]
+                mime_type = mimetypes.guess_type('anyway.json')[0]
             elif self.route.attr['function'] == 'create':
                 mime_type = mimetypes.guess_type('anyway.html')[0]
             else:
@@ -88,7 +88,10 @@ class Response(object):
             elif self.route.attr['function'] == 'create':
                 body = self.create()
             elif self.route.attr['function'] == 'delete':
-                body = self.delete()
+                id_file = self.route.attr['params'][0]
+                file_json = open('repository/sql_copy.json', 'w')
+                body = self.delete(id_file, file_json)
+                file_json.close()
             else:
                 file = open(self.route.attr['path'], 'rb')
                 body = file.read()
@@ -119,8 +122,31 @@ class Response(object):
 
         return json.dumps(response).encode('utf-8')
 
-    def delete(self):
-        return ''
+    @staticmethod
+    def delete(id_file, file_json):
+        response = {
+            "data": "",
+            "status": 500,
+            "message": "File not found."
+        }
+        files = file_json.read()
+        files = json.loads(files)
+        new_file = []
+
+        for file in files:
+            if file['id'] == int(id_file):
+                response = {
+                    "data": file,
+                    "status": 200,
+                    "message": "Xerox deleted successfully."
+                }
+            else:
+                new_file.append(file)
+
+        new_file = json.dumps(new_file)
+        file_json.write(json.load(new_file))
+
+        return json.dumps(response).encode('utf-8')
 
     def create(self):
         return ''
