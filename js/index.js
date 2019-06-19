@@ -3,6 +3,8 @@ function edit(id) {
     var url = "http://10.1.1.105:4000/xerox/edit/" + id;
     xmlHttp.open("GET", url);
     xmlHttp.send();
+
+    response = xmlHttp.response
 }
 
 function deleted(id) {

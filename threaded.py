@@ -13,7 +13,7 @@ class Thread(object):
             # return a object w/ sent bytes by client
             # the value of bufsize should be a relatively small power of 2
             data = conn.recv(1024).decode('utf-8')
-            print(data)
+
             route = WebRoutes(data)
 
             request = http_request.Request(data, route.method)

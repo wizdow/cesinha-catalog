@@ -14,31 +14,6 @@ class IndexController(object):
     def html(self, html):
         self._html = html
 
-    def get_edit_in_index(self, file):
-        row = self.html.find(id="edit")
-
-        for data in ['assigned', 'course', 'title', 'price']:
-            div = self.html.new_tag('div')
-            div['class'] = 'col-md-2'
-
-            form = self.html.new_tag('div')
-            form['class'] = 'form-group'
-
-            label = self.html.new_tag('label')
-            label['for'] = 'id'
-
-            strong = self.html.new_tag('label')
-            strong.append(data + ':')
-
-            br = self.html.new_tag('br')
-
-            label.append(strong)
-            form.append(label)
-            form.append(br)
-            form.append(file[data])
-            div.append(form)
-            row.append(div)
-
     def tag_i(self, class_tag):
         i = self.html.new_tag("i")
         i['class'] = class_tag
@@ -48,7 +23,7 @@ class IndexController(object):
 
     def button(self, class_button, on_click, title):
         button = self.html.new_tag("a")
-        button['on-click'] = on_click
+        button['onclick'] = on_click
         button['class'] = class_button
         button['title'] = title
 

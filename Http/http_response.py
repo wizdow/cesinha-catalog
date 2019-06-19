@@ -52,13 +52,13 @@ class Response(object):
             headers = 'HTTP/1.1 200 OK\r\n'
 
             if self.route.attr['function'] == 'edit':
-                mime_type = mimetypes.guess_type('.html')[0]
+                mime_type = mimetypes.guess_type('anyway.json')[0]
             elif self.route.attr['function'] == 'delete':
-                mime_type = mimetypes.guess_type('.html')[0]
+                mime_type = mimetypes.guess_type('anyway.html')[0]
             elif self.route.attr['function'] == 'create':
-                mime_type = mimetypes.guess_type('.html')[0]
+                mime_type = mimetypes.guess_type('anyway.html')[0]
             else:
-                mime_type = mimetypes.guess_type(self.route.attr['function'])[0]
+                mime_type = mimetypes.guess_type(self.route.attr['path'])[0]
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
 
@@ -82,12 +82,9 @@ class Response(object):
                 html.close()
             elif self.route.attr['function'] == 'edit':
                 id_file = self.route.attr['params'][0]
-
                 file_json = open('repository/sql.json', 'rb')
-                html = open(self.route.attr['path'], 'rb')
-                body = self.edit(id_file, file_json.read(), html.read())
+                body = self.edit(id_file, file_json.read())
                 file_json.close()
-                html.close()
             elif self.route.attr['function'] == 'create':
                 body = self.create()
             elif self.route.attr['function'] == 'delete':
@@ -103,16 +100,24 @@ class Response(object):
         return body
 
     @staticmethod
-    def edit(id_file, file_json, response):
-        html = IndexController(response, 'html.parser')
+    def edit(id_file, file_json):
+        response = {
+            'data': '',
+            'status': 500,
+            'message': 'File not found.'
+        }
         files = json.loads(file_json)
 
         for file in files:
-            if file['id'] == id_file:
-                html.get_edit_in_index(file)
+            if file['id'] == int(id_file):
+                response = {
+                    'data': file,
+                    'status': 200,
+                    'message': 'File found successfully.'
+                }
                 break
 
-        return html.html.encode('utf-8')
+        return str(response).encode('utf-8')
 
     def delete(self):
         return ''
@@ -122,7 +127,6 @@ class Response(object):
 
     @staticmethod
     def get_body_with_json(file_json, response):
-
         html = IndexController(response, 'html.parser')
         files = json.loads(file_json)
 
