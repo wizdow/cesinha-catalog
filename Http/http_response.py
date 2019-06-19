@@ -86,7 +86,7 @@ class Response(object):
                 body = self.edit(id_file, file_json.read())
                 file_json.close()
             elif self.route.attr['function'] == 'create':
-                body = self.create()
+                body = self.create(json.loads(self.request.params()), 'repository/sql.json')
             elif self.route.attr['function'] == 'delete':
                 id_file = self.route.attr['params'][0]
                 body = self.delete(id_file, 'repository/sql.json')
@@ -160,7 +160,15 @@ class Response(object):
         files = json.loads(files)
         file_json.close()
 
-        data['id'] = files[-1]['id'] + 1
+        data = {
+            "id": files[-1]['id'] + 1,
+            "type": data['type'],
+            "assigned": data['assigned'],
+            "course": data['course'],
+            "title": data['title'],
+            "price": data['price']
+        }
+
         files.append(data)
 
         self.write_json(files, path_json)
