@@ -58,9 +58,60 @@ function deleted(id) {
     xmlHttp.send();
 }
 
-function create() {
+function create(id) {
+    var discipline;
+    var price;
+    var object = [];
+
+    if(id == "#bookBtn"){
+        discipline = $("#disciplineBook").val();
+        let author = $("#author").val();
+        let book = $("#book").val();
+        price = $("#priceBook").val();
+
+        object = [discipline, author, book, price];
+    }else if(id == "#scholarExerciseBtn"){
+        discipline = $("#disciplineScholarExercise").val();
+        let professor = $("#professor").val();
+        let period = $("#period").val();
+        price = $("#priceScholarExercise").val();
+
+        object = [discipline, professor, period, price];
+    }
     var xmlHttp = new XMLHttpRequest();
     var url = "http://10.1.1.105:4000/xerox/created";
     xmlHttp.open("POST", url);
     xmlHttp.send();
+}
+
+
+function showForm(){
+    hideElement("#examesAndBooks");
+    hideElement("#exames-table");
+    hideElement("#books-table");
+    showElement("#selectType");
+    showElement("#formBook");   
+
+    $('input[type="radio"]').on('change', function(e) {
+        var type = $('input[name=chooseType]:checked').val();
+        changeForm(type);
+    });
+}
+
+function changeForm(type){
+    if(type == 1){
+        $("#formBook").prop("hidden",false);
+        $("#formExame").prop("hidden",true);
+    }else if(type == 2){
+        $("#formExame").prop("hidden",false);
+        $("#formBook").prop("hidden",true);
+    }
+}
+
+function hideElement(id){
+    $(id).prop("hidden", true);
+}
+
+function showElement(id){
+    $(id).prop("hidden", false);
 }

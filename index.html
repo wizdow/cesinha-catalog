@@ -23,9 +23,9 @@
         </a>
       </div>
 
-      <div class="col">
+      <div class="col" id="examesAndBooks">
         <ul class="tabs orange lighten-4">
-          <li class="tab"><a class="active" href="#books-table">Livros</a></li>
+          <li class="tab" ><a class="active" href="#books-table">Livros</a></li>
           <li class="tab"><a href="#exames-table">Exercícios Escolares</a></li>
         </ul>
       </div>
@@ -36,7 +36,9 @@
 
       <button class="btn btn-sidenav orange darken-3" id="create-material"
               type="button" data-toggle="modal"
-              data-target="#create-material">Adicionar material
+              data-target="#create-material"
+              onclick="showForm()">Adicionar material
+
       </button>
     </div>
 
@@ -63,6 +65,116 @@
     <div id="edit" class="orange lighten-4">
       <!-- EDIT -->
     </div>
+
+    <!-- Select -->
+    <div class="container" id="selectType" hidden>
+    <form action="#">
+      <h3>Esolha uma opção</h3>
+      <p>
+        <label>
+          <input name="chooseType" type="radio" value="1" checked/>
+          <span>Adicionar Livro</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="chooseType" type="radio" value="2"/>
+          <span>Adicionar Exercício Escolar</span>
+        </label>
+      </p> 
+    </form>
+  </div>
+
+    <!-- FORM Book -->
+    <div id="formBook" hidden> 
+      <div class="col s12 m12 l6">
+          <div class="card-panel">
+            <h4 class="header2">Adicionar Livro</h4>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Cálculo 4" id="disciplineBook" type="text">
+                    <label class="active">Cadeira</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="James Stewart" id="author">
+                    <label class="active">Autor</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Nome do livro" id="book">
+                    <label class="active">Livro</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Preço do livro" id="priceBook" type="number">
+                    <label class="active">Preço</label>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <button id="bookBtn" class="btn cyan waves-effect waves-light right" onclick="create('#bookbtn')">Enviar Arquivo
+                        <i class="mdi-content-send right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+       </div>
+    </div>
+
+    <!-- FORM EXAME -->
+    <div id="formExame" hidden> 
+      <div class="col s12 m12 l6">
+          <div class="card-panel">
+            <h4 class="header2">Adicionar Exercício escolar</h4>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Cálculo 4" id="disciplineScholarExercise" type="text">
+                    <label class="active">Cadeira</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="James Stewart" id="professor">
+                    <label class="active">Professor</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Período da cadeira" id="period" type="number">
+                    <label class="active">Período</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Preço do livro" id="priceScholarExercise" type="number">
+                    <label class="active">Preço</label>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <button id="scholarExerciseBtn" class="btn cyan waves-effect waves-light right" onclick="create('#scholarExerciseBtn')">Enviar Arquivo
+                        <i class="mdi-content-send right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+       </div>
+    </div>
+
+    
+
 
     <!-- TABLE CONTENT -->
     <div id="books-table">
