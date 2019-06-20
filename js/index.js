@@ -135,6 +135,7 @@ function showForm(){
     hideElement("#examesAndBooks");
     hideElement("#exames-table");
     hideElement("#books-table");
+    hideElement("#edit");
     showElement("#selectType");
     showElement("#formBook");
 
