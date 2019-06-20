@@ -2,14 +2,15 @@ class Request(object):
 
     def __init__(self, string, method):
         self._string = string
-        self._params = []
         self._method = method
 
         string = string.split('\r\n')
         string.pop(0)
         self._headers = self.headers_by_string(string)
-        self._params = string[(string.index("{")):]
-        self._params = "\n".join(self._params)
+
+        if method == 'POST':
+            self._params = string[(string.index("{")):]
+            self._params = "\n".join(self._params)
 
     @property
     def params(self):
