@@ -13,11 +13,11 @@ class Response(object):
 
     @property
     def request(self):
-        return self._route
+        return self._request
 
     @request.setter
     def request(self, request):
-        self._route = request
+        self._request = request
 
     @property
     def route(self):
@@ -61,7 +61,6 @@ class Response(object):
                 mime_type = mimetypes.guess_type(self.route.attr['path'])[0]
 
             headers += 'Content-Type: ' + str(mime_type) + '\r\n\r\n'
-
         except Exception as e:
             headers = 'HTTP/1.1 404 Not Found\r\n\r\n'
             self._body(f"Error 404: File not found\r\n{e}\r\n")
@@ -86,7 +85,7 @@ class Response(object):
                 body = self.edit(id_file, file_json.read())
                 file_json.close()
             elif self.route.attr['function'] == 'create':
-                body = self.create(json.loads(self.request.params()), 'repository/sql.json')
+                body = self.create(json.loads(self.request.params), 'repository/sql.json')
             elif self.route.attr['function'] == 'delete':
                 id_file = self.route.attr['params'][0]
                 body = self.delete(id_file, 'repository/sql.json')

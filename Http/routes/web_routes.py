@@ -36,6 +36,10 @@ class WebRoutes(object):
                 'id': True,
                 'method': 'DELETE',
             },
+            'update': {
+                'id': True,
+                'method': 'PUT',
+            },
         }
     }
 
