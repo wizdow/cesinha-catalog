@@ -26,8 +26,7 @@ class WebRoutes(object):
         'xerox': {
             'edit': {
                 'id': True,
-                'method': 'GET',
-                'mime_type': '.html'
+                'method': 'GET'
             },
             'create': {
                 'id': False,

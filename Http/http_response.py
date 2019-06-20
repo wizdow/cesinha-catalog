@@ -56,7 +56,7 @@ class Response(object):
             elif self.route.attr['function'] == 'delete':
                 mime_type = mimetypes.guess_type('anyway.json')[0]
             elif self.route.attr['function'] == 'create':
-                mime_type = mimetypes.guess_type('anyway.html')[0]
+                mime_type = mimetypes.guess_type('anyway.json')[0]
             else:
                 mime_type = mimetypes.guess_type(self.route.attr['path'])[0]
 
@@ -172,6 +172,8 @@ class Response(object):
         files.append(data)
 
         self.write_json(files, path_json)
+
+        response['data'] = data
 
         return json.dumps(response).encode('utf-8')
 
