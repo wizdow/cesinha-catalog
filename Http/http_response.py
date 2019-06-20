@@ -57,6 +57,8 @@ class Response(object):
                 mime_type = mimetypes.guess_type('anyway.json')[0]
             elif self.route.attr['function'] == 'create':
                 mime_type = mimetypes.guess_type('anyway.json')[0]
+            elif self.route.attr['function'] == 'update':
+                mime_type = mimetypes.guess_type('anyway.json')[0]
             else:
                 mime_type = mimetypes.guess_type(self.route.attr['path'])[0]
 
@@ -89,6 +91,11 @@ class Response(object):
             elif self.route.attr['function'] == 'delete':
                 id_file = self.route.attr['params'][0]
                 body = self.delete(id_file, 'repository/sql.json')
+            elif self.route.attr['function'] == 'update':
+                id_file = self.route.attr['params'][0]
+                file_json = open('repository/sql.json', 'rb')
+                body = self.update(id_file, file_json.read(), json.loads(self.request.params))
+                file_json.close()
             else:
                 file = open(self.route.attr['path'], 'rb')
                 body = file.read()
@@ -98,6 +105,40 @@ class Response(object):
             return f"Error 404: File not found\r\n{e}\r\n".encode('utf-8')
 
         return body
+
+    def update(self, id_file, file_json, data):
+        response = {
+            "data": "",
+            "status": 500,
+            "message": "File not found."
+        }
+
+        files = json.loads(file_json)
+        new_files = []
+
+        for file in files:
+            if file['id'] == int(id_file):
+                data = {
+                    "id": file['id'],
+                    "type": data['type'],
+                    "assigned": data['assigned'],
+                    "course": data['course'],
+                    "title": data['title'],
+                    "price": data['price']
+                }
+                print(data)
+                new_files.append(data)
+                response = {
+                    "data": file,
+                    "status": 200,
+                    "message": "File found successfully."
+                }
+            else:
+                new_files.append(file)
+
+        self.write_json(new_files, 'repository/sql.json')
+
+        return json.dumps(response).encode('utf-8')
 
     @staticmethod
     def edit(id_file, file_json):

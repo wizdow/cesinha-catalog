@@ -9,7 +9,7 @@ class Request(object):
         string.pop(0)
         self._headers = self.headers_by_string(string)
 
-        if method == 'POST':
+        if method == 'POST' or method == 'PUT':
             self._params = string[(string.index("")+1):]
             self._params = self._params[0]
 

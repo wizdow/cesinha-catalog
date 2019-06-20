@@ -89,3 +89,36 @@ function create() {
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(JSON.stringify(data));
 }
+
+
+function update(id) {
+    var course = "Redes 1";
+    var author = "Edison";
+    var title = "2019.2";
+    var price = "451.6";
+    var type = 1;
+
+    data = {
+        type: type,
+        assigned: author,
+        course: course,
+        title: title,
+        price: price
+    };
+
+    var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.onreadystatechange = function() {
+        if(this.readyState == XMLHttpRequest.DONE){
+            var response = JSON.parse(this.responseText);
+            alert(response.message)
+            setTimeout(function() {
+              location.reload();
+            }, 720);
+        }
+    }
+    var url = "http://10.1.1.105:4000/xerox/update/" + id;
+    xmlHttp.open("PUT", url);
+    xmlHttp.setRequestHeader("Content-Type", "application/json");
+    xmlHttp.send(JSON.stringify(data));
+}
