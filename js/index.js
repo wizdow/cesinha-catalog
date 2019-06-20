@@ -59,29 +59,49 @@ function deleted(id) {
 }
 
 function create(id) {
-    var discipline;
-    var price;
+    var course = "";
+    var author = "";
+    var title = "";
+    var price = 0;
+    var type = 0;
     var object = [];
 
-    if(id == "#bookBtn"){
-        discipline = $("#disciplineBook").val();
-        let author = $("#author").val();
-        let book = $("#book").val();
+    if(id == "#bookbtn"){
+        type = 0;
+        course = $("#disciplineBook").val();
+        author = $("#author").val();
+        title = $("#book").val();
         price = $("#priceBook").val();
-
-        object = [discipline, author, book, price];
     }else if(id == "#scholarExerciseBtn"){
-        discipline = $("#disciplineScholarExercise").val();
-        let professor = $("#professor").val();
-        let period = $("#period").val();
+        type = 1;
+        course = $("#disciplineScholarExercise").val();
+        author = $("#professor").val();
+        title = $("#period").val();
         price = $("#priceScholarExercise").val();
-
-        object = [discipline, professor, period, price];
     }
+
+    data = {
+        type: type,
+        assigned: author,
+        course: course,
+        title: title,
+        price: price
+    };
+
     var xmlHttp = new XMLHttpRequest();
-    var url = "http://10.1.1.105:4000/xerox/created";
+
+    xmlHttp.onreadystatechange = function() {
+        if(this.readyState == XMLHttpRequest.DONE){
+            var response = JSON.parse(this.responseText);
+            alert(response.message)
+            setTimeout(function() {
+              location.reload();
+            }, 720);
+        }
+    }
+    var url = "http://10.1.1.105:4000/xerox/create";
     xmlHttp.open("POST", url);
-    xmlHttp.send();
+    xmlHttp.send(JSON.stringify(data));
 }
 
 

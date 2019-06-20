@@ -4,13 +4,15 @@ class Request(object):
         self._string = string
         self._method = method
 
+        print(string) if method == 'POST' else print()
+
         string = string.split('\r\n')
         string.pop(0)
         self._headers = self.headers_by_string(string)
 
         if method == 'POST':
-            self._params = string[(string.index("{")):]
-            self._params = "\n".join(self._params)
+            self._params = string[(string.index("") + 1):]
+            self._params = self._params[0]
 
     @property
     def params(self):
