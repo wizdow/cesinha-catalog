@@ -231,6 +231,7 @@ class Response(object):
                 f.write('\t\t"price": "%s"\n' % file['price'])
                 f.write('\t}\n') if file['id'] == list_json[-1]['id'] else f.write('\t},\n')
             f.write(']\n')
+            f.close()
 
     @staticmethod
     def get_body_with_json(file_json, response):

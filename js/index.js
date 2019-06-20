@@ -7,29 +7,51 @@ function edit(id) {
             var title = response.data.type ? `Ano` : `Título`;
 
             var edit = document.getElementById("edit");
+            var close = document.createElement("a");
+            var update = document.createElement("a");
+
+            close.innerHTML = `<div class="col" style="float: right; position: relative" onclick="closeElement('edit');">
+                                <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small  red darken-3">
+                                  <i class="material-icons">close</i>
+                                </a>
+                              </div>`;
+            update.innerHTML = `<div class="col" style="float: right; position: relative" onclick="update(`+id+`,`+ response.data.type + `)">
+                                <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small orange darken-3">
+                                  <i class="material-icons">done</i>
+                                </a>
+                              </div>`;
+
             edit.classList.add("row");
             edit.innerHTML = '';
 
             edit.innerHTML = `<div class="column orange lighten-4" style="padding: 20px 10px;">
                                 <div class="form-group">
-                                    <label for="id"><h5><strong>Autor:</strong></h5></label>` + response.data.assigned + `
+                                    <label for="id"><h5><strong>Autor:</strong></h5></label>
+                                    <input value="` + response.data.assigned + `" id="assigned-input">
                                 </div>
                             </div>
                             <div class="column orange lighten-4" style="padding: 20px 10px;">
                                 <div class="form-group">
-                                    <label for="id"><h5><strong>Cadeira:</strong></h5></label>` + response.data.course + `
+                                    <label for="id"><h5><strong>Cadeira:</strong></h5></label>
+                                    <input value="` + response.data.course + `" id="course-input">
                                 </div>
                             </div>
                             <div class="column orange lighten-4" style="padding: 20px 10px;">
                                 <div class="form-group">
-                                    <label for="id"><h5><strong>` + title + `:</strong></h5></label>` + response.data.title + `
+                                    <label for="id"><h5><strong>` + title + `:</strong></h5></label>
+                                    <input value="` + response.data.title + `" id="title-input">
                                 </div>
                             </div>
                             <div class="column orange lighten-4" style="padding: 20px 10px;">
                                 <div class="form-group">
-                                    <label for="id"><h5><strong>Preço:</strong></h5></label>R$ ` + response.data.price + `
+                                    <label for="id"><h5><strong>Preço (R$):</strong></h5></label>
+                                    <input value="` + response.data.price + `" id="price-input">
                                 </div>
                             </div>`;
+
+
+            edit.appendChild(close)
+            edit.appendChild(update)
         }
     }
 
@@ -97,19 +119,13 @@ function create(id) {
 }
 
 
-function update(id) {
-    var course = "Redes 1";
-    var author = "Edison";
-    var title = "2019.2";
-    var price = "451.6";
-    var type = 1;
-
-    data = {
+function update(id, type) {
+   var data = {
         type: type,
-        assigned: author,
-        course: course,
-        title: title,
-        price: price
+        assigned: $("#assigned-input").val(),
+        course: $("#course-input").val(),
+        title: $("#title-input").val(),
+        price: $("#price-input").val()
     };
 
     var xmlHttp = new XMLHttpRequest();
@@ -161,4 +177,9 @@ function hideElement(id){
 
 function showElement(id){
     $(id).prop("hidden", false);
+}
+
+function closeElement(id){
+    var element = document.getElementById(id);
+    element.innerHTML = ''
 }
