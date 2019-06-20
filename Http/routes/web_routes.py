@@ -45,8 +45,9 @@ class WebRoutes(object):
 
     def __init__(self, string):
         string = string.split(' ')
+        null_page = (string[1].lstrip('/') == '' or string[1].lstrip('/') == '?')
 
-        self._path = 'index.html' if string[1].lstrip('/') == '' else string[1].lstrip('/')
+        self._path = 'index.html' if null_page else string[1].lstrip('/')
         self._method = string[0]
 
         self._path = self._path.split('/')

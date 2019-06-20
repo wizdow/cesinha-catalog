@@ -48,7 +48,7 @@ function deleted(id) {
             alert(response.message)
             setTimeout(function() {
               location.reload();
-            }, 720);
+            }, 600);
         }
     }
 
@@ -59,48 +59,25 @@ function deleted(id) {
 }
 
 function create(id) {
-//    var course = "Redes 1";
-//    var author = "Edison";
-//    var title = "2019.2";
-//    var price = "451.6";
-//    var type = 1;
-//
-//    data = {
-//        type: type,
-//        assigned: author,
-//        course: course,
-//        title: title,
-//        price: price
-//    };
-
-    var course = "";
-    var author = "";
-    var title = "";
-    var price = 0;
-    var type = 0;
-    var object = [];
+    var data;
 
     if(id == "#bookbtn"){
-        type = 0;
-        course = $("#disciplineBook").val();
-        author = $("#author").val();
-        title = $("#book").val();
-        price = $("#priceBook").val();
+        data = {
+            type: 0,
+            assigned: $("#author").val(),
+            course: $("#disciplineBook").val(),
+            title: $("#book").val(),
+            price: $("#priceBook").val()
+        };
     }else if(id == "#scholarExerciseBtn"){
-        type = 1;
-        course = $("#disciplineScholarExercise").val();
-        author = $("#professor").val();
-        title = $("#period").val();
-        price = $("#priceScholarExercise").val();
+        data = {
+            type: 1,
+            assigned: $("#professor").val(),
+            course: $("#disciplineScholarExercise").val(),
+            title: $("#period").val(),
+            price: $("#priceScholarExercise").val()
+        };
     }
-
-    data = {
-        type: type,
-        assigned: author,
-        course: course,
-        title: title,
-        price: price
-    };
 
     var xmlHttp = new XMLHttpRequest();
 
@@ -110,7 +87,7 @@ function create(id) {
             alert(response.message)
             setTimeout(function() {
               location.reload();
-            }, 720);
+            }, 600);
         }
     }
     var url = "http://10.1.1.105:4000/xerox/create";
@@ -143,7 +120,7 @@ function update(id) {
             alert(response.message)
             setTimeout(function() {
               location.reload();
-            }, 720);
+            }, 600);
         }
     }
     var url = "http://10.1.1.105:4000/xerox/update/" + id;
