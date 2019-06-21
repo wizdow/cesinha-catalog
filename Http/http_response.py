@@ -219,7 +219,7 @@ class Response(object):
 
     @staticmethod
     def write_json(list_json, path_json):
-        with open(path_json, 'w') as f:
+        with open(path_json, 'w', encoding="utf8", errors='ignore') as f:
             f.write('[\n')
             for file in list_json:
                 f.write('\t{\n')
