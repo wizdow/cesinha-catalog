@@ -310,5 +310,13 @@
 		"course": "Calculo 1 a 4",
 		"title": "Calculo 1, 2, 3 e 4",
 		"price": "80"
+	},
+	{
+		"id": 40,
+		"type": 0,
+		"assigned": "um autor",
+		"course": "uma cadeira",
+		"title": "um livro",
+		"price": "87"
 	}
 ]
