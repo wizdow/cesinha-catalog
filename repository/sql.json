@@ -12,7 +12,7 @@
 		"type": 1,
 		"assigned": "MEUSER VALENCA",
 		"course": "LOGICA",
-		"title": "2019.1",
+		"title": "2017.1",
 		"price": "5.00"
 	},
 	{
@@ -160,14 +160,6 @@
 		"price": "54.00"
 	},
 	{
-		"id": 21,
-		"type": 0,
-		"assigned": "James Stewart",
-		"course": "Cálculo Diferencial e Integral 1",
-		"title": "Cálculo 1, James Stewart",
-		"price": "113.90"
-	},
-	{
 		"id": 22,
 		"type": 0,
 		"assigned": "James Stewart",
@@ -294,29 +286,5 @@
 		"course": "Física 3",
 		"title": "Fundamentos da Física - Volume 2 - Gravitação, Ondas e Termodinâmica",
 		"price": "89.00"
-	},
-	{
-		"id": 38,
-		"type": 1,
-		"assigned": "Edison",
-		"course": "Redes 1",
-		"title": "2019.2",
-		"price": "451.6"
-	},
-	{
-		"id": 39,
-		"type": 0,
-		"assigned": "João Gonçalves",
-		"course": "Calculo 1 a 4",
-		"title": "Calculo 1, 2, 3 e 4",
-		"price": "80"
-	},
-	{
-		"id": 40,
-		"type": 0,
-		"assigned": "um autor",
-		"course": "uma cadeira",
-		"title": "um livro",
-		"price": "87"
 	}
 ]
