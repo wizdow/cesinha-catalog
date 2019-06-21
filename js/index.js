@@ -55,7 +55,7 @@ function edit(id) {
         }
     }
 
-    var url = "http://10.1.1.105:4000/xerox/edit/" + id;
+    var url = location.origin + "/xerox/edit/" + id;
     xmlHttp.open("GET", url);
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send();
@@ -74,7 +74,7 @@ function deleted(id) {
         }
     }
 
-    var url = "http://10.1.1.105:4000/xerox/delete/" + id;
+    var url = location.origin + "/xerox/delete/" + id;
     xmlHttp.open("DELETE", url);
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send();
@@ -112,7 +112,7 @@ function create(id) {
             }, 600);
         }
     }
-    var url = "http://10.1.1.105:4000/xerox/create";
+    var url = location.origin + "/xerox/create";
     xmlHttp.open("POST", url);
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(JSON.stringify(data));
@@ -139,7 +139,7 @@ function update(id, type) {
             }, 600);
         }
     }
-    var url = "http://10.1.1.105:4000/xerox/update/" + id;
+    var url = location.origin + "/xerox/update/" + id;
     xmlHttp.open("PUT", url);
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(JSON.stringify(data));
