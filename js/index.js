@@ -148,12 +148,13 @@ function update(id, type) {
 
 
 function showForm(){
-    hideElement("#examesAndBooks");
-    hideElement("#exames-table");
-    hideElement("#books-table");
-    hideElement("#edit");
-    showElement("#selectType");
-    showElement("#formBook");
+    fadeOutElement("#examesAndBooks");
+    fadeOutElement("#exames-table");
+    fadeOutElement("#books-table");
+    fadeOutElement("#edit");
+
+    fadeInElement("#selectType");
+    fadeInElement("#formBook");
 
     $('input[type="radio"]').on('change', function(e) {
         var type = $('input[name=chooseType]:checked').val();
@@ -161,22 +162,32 @@ function showForm(){
     });
 }
 
+function showStart(){
+    fadeInElement("#examesAndBooks");
+    fadeInElement("#exames-table");
+    fadeInElement("#books-table");
+    fadeInElement("#edit");
+
+    fadeOutElement("#selectType");
+    fadeOutElement("#formBook");
+}
+
 function changeForm(type){
     if(type == 1){
-        $("#formBook").prop("hidden",false);
-        $("#formExame").prop("hidden",true);
+        fadeInElement("#formBook");
+        fadeOutElement("#formExame");
     }else if(type == 2){
-        $("#formExame").prop("hidden",false);
-        $("#formBook").prop("hidden",true);
+        fadeInElement("#formExame");
+        fadeOutElement("#formBook");
     }
 }
 
-function hideElement(id){
-    $(id).prop("hidden", true);
+function fadeOutElement(id){
+    $(id).fadeOut(500);
 }
 
-function showElement(id){
-    $(id).prop("hidden", false);
+function fadeInElement(id){
+    $(id).fadeIn(500);
 }
 
 function closeElement(id){

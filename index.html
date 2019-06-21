@@ -117,9 +117,13 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <button id="bookBtn" class="btn cyan waves-effect waves-light right" onclick="create('#bookbtn')">Enviar Arquivo
+                      <button id="bookBtn" class="btn waves-effect waves-light right red" onclick="create('#bookbtn')">Voltar
                         <i class="mdi-content-send right"></i>
                       </button>
+                      <button id="back" class="btn cyan waves-effect waves-light right" onclick="back()">Enviar Arquivo
+                        <i class="mdi-content-send right"></i>
+                      </button>
+
                     </div>
                   </div>
                 </div>
@@ -193,7 +197,7 @@
           </tbody>
       </table>
     </div>
-    <div id="exames-table">
+    <div id="exames-table" hidden>
       <table class="responsive-table highlight">
         <thead class="orange accent-2">
           <tr class="red-text lighten-1">
