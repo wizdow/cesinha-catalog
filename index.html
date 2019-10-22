@@ -30,8 +30,8 @@
         </ul>
       </div>
 
-      <div id="news" class="col s8 marquee red-text lighten-1">
-        A aula de <b>Redes de Computadores I</b> está sendo ministrada agora!
+      <div id="news" class="col lighten-4l">
+        <input type="text" placeholder="Pesquisar" name="search">
       </div>
 
       <button class="btn btn-sidenav orange darken-3" id="create-material"
@@ -40,7 +40,14 @@
               onclick="showForm()">Adicionar material
 
       </button>
+      <button class="btn btn-sidenav orange darken-3" id="show-programmed"
+              type="button" data-toggle="modal"
+              data-target="#create-material"
+              onclick="showProgrammed()">Visualizar Agendamentos
+
+      </button>
     </div>
+    <div class="form-group" id="showProgrammed" style="display: block"></div>
 
     <!-- SIDEBAR -->
     <ul id="slide-out" class="sidenav">

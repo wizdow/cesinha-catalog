@@ -162,6 +162,55 @@ function showForm(){
     });
 }
 
+function showProgrammed() {
+  document.getElementById("showProgrammed").innerHTML = `
+    <div class="hidden form-group" id="showProgrammed" style="display: block">
+      <form action="" class="form-container">
+        <h1>Agendamentos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Agendamento</th>
+                    <th>Nome</th>
+                    <th>Celular</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Agendamento 1</td>
+                    <td>Nome 1</td>
+                    <td>(81) 9.9999-9999</td>
+                    <td>20/10/2019 08:21:32</td>
+                </tr>
+                <tr>
+                    <td>Agendamento 2</td>
+                    <td>Nome 2</td>
+                    <td>Celular 2</td>
+                    <td>20/10/2019 08:21:32</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="col" style="float: right; position: relative" onclick="closeElement('showProgrammed');">
+            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small orange darken-3">
+              <i class="material-icons">print</i>
+            </a>
+        </div>
+        <div class="col" style="float: right; position: relative" onclick="closeElement('showProgrammed');">
+            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small red darken-3">
+              <i class="material-icons">close</i>
+            </a>
+        </div>
+      </form>
+    </div>`;
+}
+
+function closeShowProgrammed() {
+    document.getElementById("showProgrammed").innerHTML = ''
+}
+
 function showStart(){
     fadeInElement("#examesAndBooks");
     fadeInElement("#exames-table");
