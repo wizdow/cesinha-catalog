@@ -162,6 +162,31 @@ function showForm(){
     });
 }
 
+function showSuggestMaterial() {
+    document.getElementById("showSuggestMaterial").innerHTML = `
+    <div class="hidden form-group" id="showSuggestMaterial" style="display: block">
+      <form action="/sugerir.py" method="POST" class="form-container">
+        <label for="nome"><b>Nome</b></label>
+        <input type="text" placeholder="Nome" name="nome" required>
+    
+        <label for="autor"><b>Autor</b></label>
+        <input type="text" placeholder="autor" name="autor" required>
+        
+        <label for="file"><b>Arquivo</b></label>
+        <input type="file" placeholder="Anexar" name="file" required>
+    
+        <button type="submit" class="btn">Sugerir</button>
+        
+        <div class="col" style="float: right; position: relative" onclick="closeElement('showSuggestMaterial');">
+            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small orange darken-3">
+              <i class="material-icons">print</i>
+            </a>
+        </div>
+        </div>
+      </form>
+    </div>`;
+}
+
 function showProgrammed() {
   document.getElementById("showProgrammed").innerHTML = `
     <div class="hidden form-group" id="showProgrammed" style="display: block">
@@ -205,10 +230,6 @@ function showProgrammed() {
         </div>
       </form>
     </div>`;
-}
-
-function closeShowProgrammed() {
-    document.getElementById("showProgrammed").innerHTML = ''
 }
 
 function showStart(){
