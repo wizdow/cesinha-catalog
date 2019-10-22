@@ -32,14 +32,26 @@ class IndexController(object):
     def fill_files_in_index(self, file, type_file):
         button_view = self.button("btn btn-danger", f"edit({file['id']})", "Detalhes")
         button_delete = self.button("btn orange darken-3", f"deleted({file['id']})", "Deletar")
+        button_programmed = self.button("btn orange darken-3", f"programmedMaterial({file['id']})", "Agendar")
+        button_print = self.button("btn orange darken-3", f"print({file['id']})", "Imprimir")
+        button_request = self.button("btn orange darken-3", f"request({file['id']})", "Solicitar")
 
         i_eye = self.tag_i("material-icons")
         i_eye.append("visibility")
         i_trash = self.tag_i("material-icons")
         i_trash.append("delete")
+        i_programmed = self.tag_i("material-icons")
+        i_programmed.append("calendar_today")
+        i_print = self.tag_i("material-icons")
+        i_print.append("print")
+        i_request = self.tag_i("material-icons")
+        i_request.append("launch")
 
         button_view.append(i_eye)
         button_delete.append(i_trash)
+        button_programmed.append(i_programmed)
+        button_print.append(i_print)
+        button_request.append(i_request)
 
         if type_file == 0:
             table = self.html.find(id="books")
@@ -64,6 +76,9 @@ class IndexController(object):
             column = self.html.new_tag("td")
             column.append(button_view)
             column.append(button_delete)
+            column.append(button_programmed)
+            column.append(button_print)
+            column.append(button_request)
             row.append(column)
 
             table.append(row)
@@ -90,6 +105,9 @@ class IndexController(object):
             column = self.html.new_tag("td")
             column.append(button_view)
             column.append(button_delete)
+            column.append(button_programmed)
+            column.append(button_print)
+            column.append(button_request)
             row.append(column)
 
             table.append(row)

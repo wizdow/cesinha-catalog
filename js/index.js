@@ -186,10 +186,10 @@ function showSuggestMaterial() {
     </div>`;
 }
 
-function programmedMaterial() {
+function programmedMaterial(id) {
     document.getElementById("showSuggestMaterial").innerHTML = `
     <div class="hidden form-group" id="showSuggestMaterial" style="display: block">
-      <form action="/programmed.py" method="POST" class="form-container">
+      <form action="/programmed/+id" method="POST" class="form-container">
         <label for="nome"><b>Nome</b></label>
         <input type="text" placeholder="Nome" name="nome" required>
     
