@@ -166,6 +166,7 @@ function showSuggestMaterial() {
     document.getElementById("showSuggestMaterial").innerHTML = `
     <div class="hidden form-group" id="showSuggestMaterial" style="display: block">
       <form action="/sugerir.py" method="POST" class="form-container">
+      <h3>Sugerir Documento</h3>
         <label for="nome"><b>Nome</b></label>
         <input type="text" placeholder="Nome" name="nome" required>
     
@@ -190,6 +191,7 @@ function programmedMaterial(id) {
     document.getElementById("showSuggestMaterial").innerHTML = `
     <div class="hidden form-group" id="showSuggestMaterial" style="display: block">
       <form action="/programmed/+id" method="POST" class="form-container">
+        <h3>Agendar Documento ` +id+`</h3>
         <label for="nome"><b>Nome</b></label>
         <input type="text" placeholder="Nome" name="nome" required>
     
