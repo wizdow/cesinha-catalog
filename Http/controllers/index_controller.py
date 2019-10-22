@@ -32,9 +32,9 @@ class IndexController(object):
     def fill_files_in_index(self, file, type_file):
         button_view = self.button("btn btn-danger", f"edit({file['id']})", "Detalhes")
         button_delete = self.button("btn orange darken-3", f"deleted({file['id']})", "Deletar")
-        button_programmed = self.button("btn orange darken-3", f"programmedMaterial({file['id']})", "Agendar")
-        button_print = self.button("btn orange darken-3", f"print({file['id']})", "Imprimir")
-        button_request = self.button("btn orange darken-3", f"request({file['id']})", "Solicitar")
+        button_programmed = self.button("btn blue darken-3", f"programmedMaterial({file['id']})", "Agendar")
+        button_print = self.button("btn yellow darken-3", f"print({file['id']})", "Imprimir")
+        button_request = self.button("btn green darken-3", f"request({file['id']})", "Solicitar")
 
         i_eye = self.tag_i("material-icons")
         i_eye.append("visibility")
