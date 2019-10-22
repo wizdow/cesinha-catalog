@@ -179,9 +179,8 @@ function showSuggestMaterial() {
         
         <div class="col" style="float: right; position: relative" onclick="closeElement('showSuggestMaterial');">
             <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small orange darken-3">
-              <i class="material-icons">print</i>
+              <i class="material-icons">close</i>
             </a>
-        </div>
         </div>
       </form>
     </div>`;
