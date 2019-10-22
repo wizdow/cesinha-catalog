@@ -178,7 +178,28 @@ function showSuggestMaterial() {
         <button type="submit" class="btn">Sugerir</button>
         
         <div class="col" style="float: right; position: relative" onclick="closeElement('showSuggestMaterial');">
-            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small orange darken-3">
+            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small red darken-3">
+              <i class="material-icons">close</i>
+            </a>
+        </div>
+      </form>
+    </div>`;
+}
+
+function programmedMaterial() {
+    document.getElementById("showSuggestMaterial").innerHTML = `
+    <div class="hidden form-group" id="showSuggestMaterial" style="display: block">
+      <form action="/programmed.py" method="POST" class="form-container">
+        <label for="nome"><b>Nome</b></label>
+        <input type="text" placeholder="Nome" name="nome" required>
+    
+        <label for="qtdd"><b>Quantidade</b></label>
+        <input type="number" placeholder="Quantidade" name="qtdd" required>
+    
+        <button type="submit" class="btn">Agendar</button>
+        
+        <div class="col" style="float: right; position: relative" onclick="closeElement('showSuggestMaterial');">
+            <a href="#" data-target="slide-out" class="btn-sidenav btn-floating btn-small red darken-3">
               <i class="material-icons">close</i>
             </a>
         </div>
